@@ -3,6 +3,8 @@ package org.study.llf.spring.elasticsearch;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.io.IOException;
+
 /**
  * Description 类描述
  *
@@ -15,6 +17,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MyApp {
     public static void main(String[] args) {
         SpringApplication.run(MyApp.class, args);
+        try {
+            MyJestClient.query();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

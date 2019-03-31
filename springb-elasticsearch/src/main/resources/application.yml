@@ -5,3 +5,7 @@ spring:
       cluster-nodes: 192.168.203.234:9300
       repositories:
         enabled: true
+  elasticsearch:
+    jest:
+      uris: http://192.168.203.234:9200
+      multi-threaded: true

@@ -2,6 +2,7 @@ package org.study.llf.spring.elasticsearch.dao;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.study.llf.spring.elasticsearch.pojo.Blog;
+import org.study.llf.spring.elasticsearch.pojo.CpuInfo;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,17 +15,17 @@ import java.util.Optional;
  * Date 2019-03-29
  * Time 17:19
  */
-public interface ServiceInfoMapper   extends ElasticsearchRepository<Blog,Integer> {
-
-        List<Blog> findByTitle(String title);
-
-        List<Blog> findByTitleContaining(String title);
-
-        List<Blog> findByReadSizeBetween(Integer from,Integer to);
+public interface ServiceInfoMapper   extends ElasticsearchRepository<CpuInfo,String> {
 
 
-        Optional<Blog> findById(Integer id);
 
-        List<Blog> findByTitleStartingWith(String title);
+        List<CpuInfo> findByClientIdentifyingContaining(String clientIdentifying);
+
+        List<CpuInfo> findByIdleBetween(double from,double to);
+
+
+        Optional<CpuInfo> findById(Integer id);
+
+        List<CpuInfo> findByClientIdentifyingStartingWith(String clientIdentifying);
 
 }
