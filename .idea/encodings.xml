@@ -6,6 +6,11 @@
     <file url="file://$PROJECT_DIR$/common/dubbo-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shiro-jwt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/main" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/my-main-app" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/my-plugin-jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/test-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-elasticsearch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-esapi" charset="UTF-8" />
   </component>

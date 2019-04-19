@@ -76,7 +76,7 @@ public class MyJestClient {
             System.out.println("");
             String id=js.get("_id").getAsString();
 //            String id =jp.getAsJsonPrimitive().getAsString();
-            fsInfo.setId(id);
+//            fsInfo.setId(id);
 //            fsInfo.setTimestamp();  source.get("timestamp");
             JsonObject fs = source.getAsJsonObject("fs");
             HashMap<String,String> rst=new HashMap<>();

@@ -7,15 +7,29 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dubbo-common" />
-        <module name="dubbocommon" />
-        <module name="parent" />
-        <module name="shiro-jwt" />
-        <module name="shirojwt" />
         <module name="springb-elasticsearch" />
-        <module name="springb-esapi" />
         <module name="springbelasticsearch" />
+        <module name="test-jar" />
+        <module name="mypluginjar" />
+        <module name="shiro-jwt" />
+        <module name="parent" />
+        <module name="springb-esapi" />
+        <module name="dubbocommon" />
+        <module name="shirojwt" />
+        <module name="main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dubbo-common" options="-parameters" />
+      <module name="main" options="-parameters" />
+      <module name="mypluginjar" options="-parameters" />
+      <module name="shiro-jwt" options="-parameters" />
+      <module name="springb-elasticsearch" options="-parameters" />
+      <module name="springb-esapi" options="-parameters" />
+      <module name="test-jar" options="-parameters" />
+    </option>
   </component>
 </project>
