@@ -37,7 +37,7 @@
                             targetProject="F:\code\linewell\daydayup\tk-mybatis-Generator\src\main\resources\pojo">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
-        </javaModelGenerator>K
+        </javaModelGenerator>
         <!--生成SQLMAP文件 -->
         <sqlMapGenerator targetPackage="com.linewell.license.ops.core"
                          targetProject="F:\code\linewell\daydayup\tk-mybatis-Generator\src\main\java">
