@@ -1,0 +1,16 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /ops
+dubbo:
+  server: true
+  application:
+    id: license-ops-web-dubbo
+    name: license-ops-web-dubbo
+  registry:
+    address: zookeeper://192.168.11.211:2181
+  protocol:
+    port: 21999
+    name: dubbo
+  metadata-report:
+    address: zookeeper://192.168.11.211:2181

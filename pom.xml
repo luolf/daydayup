@@ -27,6 +27,11 @@
         <module>shiro-jwt</module>
         <module>springb-elasticsearch</module>
         <module>springb-dynamic-load-jar</module>
+        <module>sofa</module>
+        <module>dubbo-test</module>
+        <module>demo-trancer</module>
+        <module>tk-mybatis-Generator</module>
+
     </modules>
 
 

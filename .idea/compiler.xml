@@ -6,30 +6,57 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="dubbo-common" />
-        <module name="springb-elasticsearch" />
-        <module name="springbelasticsearch" />
-        <module name="test-jar" />
-        <module name="mypluginjar" />
-        <module name="shiro-jwt" />
-        <module name="parent" />
-        <module name="springb-esapi" />
-        <module name="dubbocommon" />
         <module name="shirojwt" />
+        <module name="parent" />
+        <module name="dubbo-common" />
+        <module name="dubbo-api" />
+        <module name="springb-esapi" />
+        <module name="springbelasticsearch" />
+        <module name="sofa" />
+        <module name="sofaboot-first" />
+        <module name="demo-service-c" />
+        <module name="demo-service-b" />
+        <module name="demo-service-a" />
+        <module name="dubbocommon" />
+        <module name="demo-zipkin" />
+        <module name="shiro-jwt" />
+        <module name="test-jar" />
+        <module name="first" />
+        <module name="tkmybatisGenerator" />
+        <module name="dubbotest" />
+        <module name="mypluginjar" />
+        <module name="springb-elasticsearch" />
         <module name="main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="8">
+      <module name="dubboconsumer" target="1.5" />
+      <module name="first" target="1.8" />
+      <module name="sofaboot" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="demo-service-a" options="" />
+      <module name="demo-service-b" options="" />
+      <module name="demo-service-c" options="" />
+      <module name="demo-zipkin" options="-parameters" />
+      <module name="demotrancer" options="" />
+      <module name="dubbo-api" options="" />
       <module name="dubbo-common" options="-parameters" />
+      <module name="dubbotest" options="-parameters" />
+      <module name="first" options="-parameters" />
       <module name="main" options="-parameters" />
       <module name="mypluginjar" options="-parameters" />
+      <module name="parent" options="-parameters" />
       <module name="shiro-jwt" options="-parameters" />
+      <module name="sofa" options="" />
+      <module name="sofaboot" options="-parameters" />
+      <module name="sofaboot-first" options="" />
       <module name="springb-elasticsearch" options="-parameters" />
       <module name="springb-esapi" options="-parameters" />
       <module name="test-jar" options="-parameters" />
+      <module name="tkmybatisGenerator" options="-parameters" />
     </option>
   </component>
 </project>

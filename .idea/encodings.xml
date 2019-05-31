@@ -4,14 +4,23 @@
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/dubbo-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-trancer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-trancer/demo-service-a" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-trancer/demo-service-b" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-trancer/demo-service-c" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-trancer/dubbo-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-zipkin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo-test" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shiro-jwt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sofa" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sofa/sofaboot-first" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/main" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/my-main-app" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/my-plugin-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/test-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-elasticsearch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-esapi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/tk-mybatis-Generator" charset="UTF-8" />
   </component>
 </project>

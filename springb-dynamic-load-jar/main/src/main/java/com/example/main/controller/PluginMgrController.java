@@ -3,6 +3,10 @@ package com.example.main.controller;
 import com.example.main.service.PluginService;
 import com.example.main.util.ClassUtil;
 import com.example.main.util.SpringManager;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
@@ -13,10 +17,13 @@ import org.springframework.context.annotation.ScannedGenericBeanDefinition;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.core.type.ClassMetadata;
 import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.core.type.classreading.SimpleMetadataReaderFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +49,7 @@ import java.util.*;
  * Time 17:01
  */
 @RestController
+@Api(tags = "插件管理")
 public class PluginMgrController {
     @Autowired
     private PluginService pluginService;
@@ -52,7 +60,11 @@ public class PluginMgrController {
         return "sucess";
     }
 
-    @RequestMapping("/load2")
+    @RequestMapping("/loadPlugin2")
+    @ApiOperation(value = "加载分析组件", notes = "加载分析组件")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "pluginFileName", value = "组件文件名(包含路径)", required = true, dataType = "String")
+    })
     public String loadPlugin2() {
        loadPluginFromJar("F:\\code\\linewell\\daydayup\\springb-dynamic-load-jar\\my-plugin-jar\\target");
         return "sucess";
@@ -195,10 +207,15 @@ public class PluginMgrController {
 
         MetadataReaderFactory metadata = new SimpleMetadataReaderFactory();
         for (Resource resource : resources) {
-
             MetadataReader metadataReader = metadata.getMetadataReader(resource);
-            if(metadataReader.getClassMetadata().isInterface())
+            boolean isController= metadataReader.getAnnotationMetadata().hasAnnotation("org.springframework.stereotype.Controller");
+            boolean isRestController= metadataReader.getAnnotationMetadata().hasAnnotation("org.springframework.web.bind.annotation.RestController");
+            boolean isRestComponent= metadataReader.getAnnotationMetadata().hasAnnotation("org.springframework.stereotype.Component");
+            boolean isRestService= metadataReader.getAnnotationMetadata().hasAnnotation("org.springframework.stereotype.Service");
+            if(!isController && !isRestController && !isRestComponent && !isRestService){
                 continue;
+            }
+
             ScannedGenericBeanDefinition sbd = new ScannedGenericBeanDefinition(metadataReader);
             sbd.setResource(resource);
             sbd.setSource(resource);
@@ -206,13 +223,8 @@ public class PluginMgrController {
         }
         for (BeanDefinition beanDefinition : candidates) {
             String classname = beanDefinition.getBeanClassName();
-//            Controller c=Class.forName(classname,false,classLoader).getAnnotation(Controller.class);
-//            Service s=Class.forName(classname,false,classLoader).getAnnotation(Service.class);
-//            Component component=Class.forName(classname,false,classLoader).getAnnotation(Component.class);
-//            if(c!=null ||s!=null ||component!=null)
             System.out.println(classname);
         }
-
         return candidates;
     }
 
@@ -231,13 +243,12 @@ public class PluginMgrController {
             //新建classloader 核心
             URLClassLoader urlClassLoader = new URLClassLoader(urls, beanClassLoader);
 
-            //获取导入的jar的controller  service  dao 等类，并且创建BeanDefinition
+            //获取导入的jar的controller  service  等类，并且创建BeanDefinition
             Set<BeanDefinition> beanDefinitions = getBeanDefinitions(urlClassLoader);
             beanDefinitions.forEach(item -> {
                 //根据beanDefinition通过BeanFactory注册bean
                 beanFactory.registerBeanDefinition(item.getBeanClassName(), item);
-//                annotationConfigEmbeddedWebApplicationContext.getDefaultListableBeanFactory().registerBeanDefinition(item.getBeanClassName(), item);
-            });
+          });
 
             //修改BeanFactory的ClassLoader
 //            annotationConfigEmbeddedWebApplicationContext.getDefaultListableBeanFactory().setBeanClassLoader(urlClassLoader);
