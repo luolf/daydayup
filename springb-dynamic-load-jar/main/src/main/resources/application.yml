@@ -2,5 +2,5 @@ swagger:
   title: 运维平台restful API手册
   version: 1.0.0
   description: 运维平台
-  basePackage: com.linewell.license.ops.web.controller
+  basePackage: com.example.main,org.llf.spb.plugin,com.example.main.controller
 

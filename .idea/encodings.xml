@@ -11,9 +11,14 @@
     <file url="file://$PROJECT_DIR$/demo-trancer/dubbo-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-zipkin" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dubbo-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/g11n" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/g11n/i10n" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/g11n/i18n" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mysql-analyzer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shiro-jwt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/sofa-stack" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa/sofaboot-first" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/main" charset="UTF-8" />

@@ -1,0 +1,1 @@
+dubboExceptionFilter=com.example.demoservicec.DubboExceptionFilter

@@ -19,12 +19,14 @@ import org.apache.dubbo.rpc.RpcContext;
 public class ServiceAImpl implements ServiceA {
     @Reference
     ServiceB serviceB;
-    @Override
+
     public String sayHelloUseA(String name) {
-        return "sayHelloUseA:Thanks [" + serviceB.sayHelloUseB(name) + "], response form provider: " + RpcContext.getContext().getLocalAddress();
+
+            return "sayHelloUseA:Thanks [" + serviceB.sayHelloUseB(name) + "], response form provider: " + RpcContext.getContext().getLocalAddress();
+
     }
 
-    @Override
+
     public String sayMoniUseA(String name) {
         return "sayMoniUseA:Thanks [" + serviceB.sayMoniUseB(name) + "], response form provider: " + RpcContext.getContext().getLocalAddress();
     }
