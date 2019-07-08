@@ -1,5 +1,7 @@
 package org.llf.spb.plugin.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.llf.spb.plugin.service.HelloWorld;
 import org.llf.spb.plugin.util.TimeMgrUtil;
 import org.llf.spb.plugin.vo.User;
@@ -21,10 +23,12 @@ import java.util.Date;
  * Time 14:30
  */
 @RestController
+@Api(tags = "我的测试插件")
 public class ServiceController {
     @Autowired
     HelloWorld helloWorld;
 
+    @ApiOperation(value = "sayhello", notes = "sayhello")
     @GetMapping(value = "/sayhello", produces = {MediaType.APPLICATION_JSON_UTF8_VALUE})
     public String hi(User user) {
         System.out.println("GetMapping"+user);

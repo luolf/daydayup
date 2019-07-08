@@ -6,32 +6,49 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="shirojwt" />
-        <module name="parent" />
-        <module name="dubbo-common" />
-        <module name="dubbo-api" />
-        <module name="springb-esapi" />
-        <module name="springbelasticsearch" />
-        <module name="sofa" />
-        <module name="sofaboot-first" />
-        <module name="demo-service-c" />
+        <module name="hi-sofa-plugin" />
+        <module name="sofastack" />
+        <module name="i10n" />
+        <module name="hello-plugin" />
+        <module name="springb-elasticsearch" />
         <module name="demo-service-b" />
+        <module name="springbelasticsearch" />
+        <module name="main" />
+        <module name="dubbotest" />
+        <module name="demo-service-c" />
+        <module name="provider" />
         <module name="demo-service-a" />
-        <module name="dubbocommon" />
-        <module name="demo-zipkin" />
         <module name="shiro-jwt" />
+        <module name="dubbo-api" />
+        <module name="mysqlanalyzer" />
+        <module name="sofaboot-first" />
+        <module name="say-hi" />
+        <module name="demo-zipkin" />
+        <module name="shirojwt" />
         <module name="test-jar" />
         <module name="first" />
         <module name="tkmybatisGenerator" />
-        <module name="dubbotest" />
+        <module name="sofa" />
+        <module name="app-use-my-sofa-plugin" />
         <module name="mypluginjar" />
-        <module name="springb-elasticsearch" />
-        <module name="main" />
+        <module name="springb-esapi" />
+        <module name="i18n" />
+        <module name="say-hello" />
+        <module name="dubbocommon" />
+        <module name="dubbo-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="appusemysofaplugin" target="1.5" />
       <module name="dubboconsumer" target="1.5" />
       <module name="first" target="1.8" />
+      <module name="helloplugin" target="1.5" />
+      <module name="hisofaplugin" target="1.5" />
+      <module name="myjar" target="1.5" />
+      <module name="mysofaplugin" target="1.5" />
+      <module name="sayhello" target="1.5" />
+      <module name="sayhi" target="1.5" />
+      <module name="sofabiztest" target="1.5" />
       <module name="sofaboot" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -46,13 +63,17 @@
       <module name="dubbo-common" options="-parameters" />
       <module name="dubbotest" options="-parameters" />
       <module name="first" options="-parameters" />
+      <module name="i10n" options="-parameters" />
+      <module name="i18n" options="-parameters" />
       <module name="main" options="-parameters" />
       <module name="mypluginjar" options="-parameters" />
+      <module name="mysqlanalyzer" options="-parameters" />
       <module name="parent" options="-parameters" />
       <module name="shiro-jwt" options="-parameters" />
       <module name="sofa" options="" />
       <module name="sofaboot" options="-parameters" />
       <module name="sofaboot-first" options="" />
+      <module name="sofastack" options="-parameters" />
       <module name="springb-elasticsearch" options="-parameters" />
       <module name="springb-esapi" options="-parameters" />
       <module name="test-jar" options="-parameters" />

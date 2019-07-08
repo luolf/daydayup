@@ -18,6 +18,9 @@
         <option value="$PROJECT_DIR$/demo-trancer/demo-service-a/pom.xml" />
         <option value="$PROJECT_DIR$/demo-trancer/demo-service-b/pom.xml" />
         <option value="$PROJECT_DIR$/demo-trancer/demo-service-c/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-dubbo/pom.xml" />
+        <option value="$PROJECT_DIR$/sofa-stack/sofa-biz-test/my-jar/pom.xml" />
+        <option value="$PROJECT_DIR$/sofa-stack/sofa-biz-test/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -27,7 +30,7 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8.0_201" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>
