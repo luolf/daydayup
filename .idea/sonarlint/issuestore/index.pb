@@ -79,14 +79,8 @@ Vspringb-dynamic-load-jar/main/src/test/java/com/example/main/MainApplicationTes
 Qspringb-dynamic-load-jar/main/src/main/java/com/example/main/MainApplication.java,2\a\2a448e317cbbfd55fb51a07a6a8939ee85706ccc
 |
 Lspringb-dynamic-load-jar/main/src/test/java/com/example/main/ServerTest.java,3\d\3dc5f1c037acefcb87d12a7eceb6a6455d54fe84
-Ž
-^sofa/sofaboot-first/src/test/java/com/example/sofabootfirst/SofabootFirstApplicationTests.java,a\9\a97a105fa6e635fd1330d37cc77743151db5bf21
 <
 sofa/pom.xml,3\7\37d10c9f11e604564421266e65df267b269a6a3d
-‰
-Ysofa/sofaboot-first/src/main/java/com/example/sofabootfirst/SofabootFirstApplication.java,8\c\8c791f801272f7cb7b8f2dbbc0296ce8afd1788f
-K
-sofa/sofaboot-first/pom.xml,6\6\66f5776a2cdb64af60d0e60004814d734a58cab5
 B
 dubbo-test/pom.xml,e\d\ed64f7554a9b116671142b12a98cb9904eef1fcb
 m

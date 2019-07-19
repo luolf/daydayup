@@ -33,6 +33,7 @@
         <module>g11n</module>
         <module>mysql-analyzer</module>
         <module>sofa-stack</module>
+        <module>aop</module>
 
     </modules>
 

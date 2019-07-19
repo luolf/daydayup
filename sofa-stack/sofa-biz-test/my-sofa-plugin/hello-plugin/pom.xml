@@ -31,19 +31,24 @@
                         <goals>
                             <goal>ark-plugin</goal>
                         </goals>
-                        <configuration>
-
-                            <!-- configure exported class -->
-                            <exported>
-                                <!-- configure class-level exported class -->
-                                <classes>
-                                    <class>org.study.llf.sofa.service.Haha</class>
-                                </classes>
-                            </exported>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
 
+                    <!--设置 ark plugin 的 classifier, 默认为空, 如非必要，建议不用设置-->
+                    <classifier>ark-plugin</classifier>
+                    <attach>true</attach>
+                    <!--ark 包和 ark biz 的打包存放目录，默认为工程 build 目录-->
+                    <!--                            <outputDirectory>target</outputDirectory>-->
+                    <!-- configure exported class -->
+                    <exported>
+                        <!-- configure class-level exported class -->
+                        <classes>
+                            <class>org.study.llf.sofa.service.Haha</class>
+                        </classes>
+                    </exported>
+                    <priority>200</priority>
+                </configuration>
             </plugin>
         </plugins>
     </build>

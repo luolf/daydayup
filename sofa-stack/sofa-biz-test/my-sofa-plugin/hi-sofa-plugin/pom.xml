@@ -31,8 +31,6 @@
                         <goals>
                             <goal>ark-plugin</goal>
                         </goals>
-
-
                     </execution>
                 </executions>
                 <configuration>
@@ -46,7 +44,7 @@
                     <exported>
                         <!-- configure class-level exported class -->
                         <classes>
-                            <class>org.study.llf.sofa.service.Haha</class>
+                            <class>org.study.llf.sofa.service.Hehe</class>
                         </classes>
                     </exported>
                     <priority>200</priority>

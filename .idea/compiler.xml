@@ -6,36 +6,40 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hi-sofa-plugin" />
-        <module name="sofastack" />
+        <module name="facade" />
         <module name="i10n" />
-        <module name="hello-plugin" />
-        <module name="springb-elasticsearch" />
         <module name="demo-service-b" />
-        <module name="springbelasticsearch" />
-        <module name="main" />
-        <module name="dubbotest" />
+        <module name="i18n" />
+        <module name="kaos" />
+        <module name="customloader" />
+        <module name="springb-elasticsearch" />
         <module name="demo-service-c" />
+        <module name="springbelasticsearch" />
+        <module name="instrumentation" />
+        <module name="dubbotest" />
+        <module name="main" />
+        <module name="hello-plugin" />
+        <module name="dynamic" />
         <module name="provider" />
         <module name="demo-service-a" />
-        <module name="shiro-jwt" />
+        <module name="hi-sofa-plugin" />
         <module name="dubbo-api" />
         <module name="mysqlanalyzer" />
-        <module name="sofaboot-first" />
+        <module name="cglib" />
         <module name="say-hi" />
+        <module name="dubbo-common" />
         <module name="demo-zipkin" />
         <module name="shirojwt" />
-        <module name="test-jar" />
-        <module name="first" />
         <module name="tkmybatisGenerator" />
-        <module name="sofa" />
+        <module name="first" />
         <module name="app-use-my-sofa-plugin" />
         <module name="mypluginjar" />
         <module name="springb-esapi" />
-        <module name="i18n" />
+        <module name="shiro-jwt" />
         <module name="say-hello" />
+        <module name="jvmclassloadtest" />
         <module name="dubbocommon" />
-        <module name="dubbo-common" />
+        <module name="test-jar" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -50,10 +54,13 @@
       <module name="sayhi" target="1.5" />
       <module name="sofabiztest" target="1.5" />
       <module name="sofaboot" target="1.8" />
+      <module name="sofaboot-first" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cglib" options="-parameters" />
+      <module name="customloader" options="-parameters" />
       <module name="demo-service-a" options="" />
       <module name="demo-service-b" options="" />
       <module name="demo-service-c" options="" />
@@ -62,9 +69,11 @@
       <module name="dubbo-api" options="" />
       <module name="dubbo-common" options="-parameters" />
       <module name="dubbotest" options="-parameters" />
+      <module name="dynamic" options="-parameters" />
       <module name="first" options="-parameters" />
       <module name="i10n" options="-parameters" />
       <module name="i18n" options="-parameters" />
+      <module name="instrumentation" options="-parameters" />
       <module name="main" options="-parameters" />
       <module name="mypluginjar" options="-parameters" />
       <module name="mysqlanalyzer" options="-parameters" />
