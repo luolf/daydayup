@@ -15,6 +15,7 @@
     <modules>
         <module>say-hello</module>
         <module>say-hi</module>
+        <module>facade</module>
     </modules>
 
 

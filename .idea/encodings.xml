@@ -2,6 +2,12 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop/cglib" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop/custom-loader" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop/dynamic" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop/instrumentation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/code-translate" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/dubbo-common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-trancer" charset="UTF-8" />
@@ -16,10 +22,10 @@
     <file url="file://$PROJECT_DIR$/g11n/i18n" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mysql-analyzer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/securitty" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shiro-jwt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa-stack" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/sofa/sofaboot-first" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/main" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/my-plugin-jar" charset="UTF-8" />
@@ -27,5 +33,8 @@
     <file url="file://$PROJECT_DIR$/springb-elasticsearch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-esapi" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tk-mybatis-Generator" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/universal-capability-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/universal-capability-service/facade" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/universal-capability-service/service" charset="UTF-8" />
   </component>
 </project>

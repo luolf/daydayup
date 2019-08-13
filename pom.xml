@@ -33,6 +33,10 @@
         <module>g11n</module>
         <module>mysql-analyzer</module>
         <module>sofa-stack</module>
+        <module>aop</module>
+        <module>universal-capability-service</module>
+        <module>code-translate</module>
+        <module>securitty</module>
 
     </modules>
 

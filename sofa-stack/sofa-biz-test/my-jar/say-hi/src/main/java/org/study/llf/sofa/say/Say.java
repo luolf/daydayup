@@ -1,5 +1,6 @@
 package org.study.llf.sofa.say;
 
+
 import static java.lang.System.out;
 
 /**
@@ -10,16 +11,24 @@ import static java.lang.System.out;
  * Date 2019-07-08
  * Time 15:52
  */
-public class Say {
+public class Say implements SayFacade{
     static{
         out.println("v2:"+Say.class.getClassLoader()+"...loading me...");
     }
     public Say(){
         out.println("v2:Say()");
     }
+
     public void hello(){
         out.println("v2:****************************************");
         out.println("v2:"+this.getClass().getClassLoader()+"...loading me...");
         out.println("v2:****************************************");
+        new Report().print();
+    }
+
+    public  void test(SayFacade sayFacade){
+        out.println("test:"+this.getClass().getClassLoader()+"...loading me...");
+        sayFacade.hello();
+
     }
 }

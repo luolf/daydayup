@@ -1,0 +1,34 @@
+2019-04-30 09:45:37.128  INFO 15348 --- [main] c.e.s.SofabootFirstApplication           : Starting SofabootFirstApplication on DESKTOP-9PTM7SD with PID 15348 (F:\code\linewell\daydayup\sofa\sofaboot-first\target\classes started by Administrator in F:\code\linewell\daydayup)
+2019-04-30 09:45:37.129  INFO 15348 --- [main] c.e.s.SofabootFirstApplication           : No active profile set, falling back to default profiles: default
+2019-04-30 09:45:37.836  INFO 15348 --- [main] c.e.s.SofabootFirstApplication           : Started SofabootFirstApplication in 1.051 seconds (JVM running for 1.962)
+2019-04-30 11:37:47.502  INFO 14756 --- [main] c.e.s.SofabootFirstApplication           : Starting SofabootFirstApplication on DESKTOP-9PTM7SD with PID 14756 (F:\code\linewell\daydayup\sofa\sofaboot-first\target\classes started by Administrator in F:\code\linewell\daydayup)
+2019-04-30 11:37:47.503  INFO 14756 --- [main] c.e.s.SofabootFirstApplication           : No active profile set, falling back to default profiles: default
+2019-04-30 11:37:48.166  INFO 14756 --- [main] c.e.s.SofabootFirstApplication           : Started SofabootFirstApplication in 0.937 seconds (JVM running for 1.639)
+2019-04-30 15:09:05.919  INFO 14120 --- [main] c.e.s.SofabootFirstApplication           : Starting SofabootFirstApplication on DESKTOP-9PTM7SD with PID 14120 (F:\code\linewell\daydayup\sofa\sofaboot-first\target\classes started by Administrator in F:\code\linewell\daydayup)
+2019-04-30 15:09:05.920  INFO 14120 --- [main] c.e.s.SofabootFirstApplication           : No active profile set, falling back to default profiles: default
+2019-04-30 15:09:06.568  INFO 14120 --- [main] c.e.s.SofabootFirstApplication           : Started SofabootFirstApplication in 0.921 seconds (JVM running for 1.638)
+2019-04-30 15:13:32.783  INFO 14868 --- [main] c.e.s.SofabootFirstApplication           : Starting SofabootFirstApplication on DESKTOP-9PTM7SD with PID 14868 (F:\code\linewell\daydayup\sofa\sofaboot-first\target\classes started by Administrator in F:\code\linewell\daydayup)
+2019-04-30 15:13:32.784  INFO 14868 --- [main] c.e.s.SofabootFirstApplication           : No active profile set, falling back to default profiles: default
+2019-04-30 15:13:32.814  INFO 14868 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@49b0b76: startup date [Tue Apr 30 15:13:32 CST 2019]; root of context hierarchy
+2019-04-30 15:13:33.411  INFO 14868 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-04-30 15:13:33.415  INFO 14868 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2019-04-30 15:13:33.454  INFO 14868 --- [main] c.e.s.SofabootFirstApplication           : Started SofabootFirstApplication in 0.921 seconds (JVM running for 1.649)
+2019-04-30 15:13:33.455  INFO 14868 --- [Thread-3] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@49b0b76: startup date [Tue Apr 30 15:13:32 CST 2019]; root of context hierarchy
+2019-04-30 15:13:33.456  INFO 14868 --- [Thread-3] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2019-04-30 15:13:33.457  INFO 14868 --- [Thread-3] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-04-30 15:14:16.069  INFO 15296 --- [main] c.e.s.SofabootFirstApplication           : Starting SofabootFirstApplication on DESKTOP-9PTM7SD with PID 15296 (F:\code\linewell\daydayup\sofa\sofaboot-first\target\classes started by Administrator in F:\code\linewell\daydayup)
+2019-04-30 15:14:16.069  INFO 15296 --- [main] c.e.s.SofabootFirstApplication           : No active profile set, falling back to default profiles: default
+2019-04-30 15:14:16.097  INFO 15296 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@49b0b76: startup date [Tue Apr 30 15:14:16 CST 2019]; root of context hierarchy
+2019-04-30 15:14:16.669  INFO 15296 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-04-30 15:14:16.671  INFO 15296 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
+2019-04-30 15:14:16.708  INFO 15296 --- [main] c.e.s.SofabootFirstApplication           : Started SofabootFirstApplication in 0.868 seconds (JVM running for 1.557)
+2019-04-30 15:14:16.709  INFO 15296 --- [Thread-3] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@49b0b76: startup date [Tue Apr 30 15:14:16 CST 2019]; root of context hierarchy
+2019-04-30 15:14:16.710  INFO 15296 --- [Thread-3] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2019-04-30 15:14:16.711  INFO 15296 --- [Thread-3] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2019-04-30 15:15:21.308  INFO 2604 --- [main] c.e.s.SofabootFirstApplication           : Starting SofabootFirstApplication on DESKTOP-9PTM7SD with PID 2604 (F:\code\linewell\daydayup\sofa\sofaboot-first\target\classes started by Administrator in F:\code\linewell\daydayup)
+2019-04-30 15:15:21.309  INFO 2604 --- [main] c.e.s.SofabootFirstApplication           : No active profile set, falling back to default profiles: default
+2019-04-30 15:15:21.334  INFO 2604 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4df828d7: startup date [Tue Apr 30 15:15:21 CST 2019]; root of context hierarchy
+2019-04-30 15:15:21.624  INFO 2604 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2019-04-30 15:15:21.630  INFO 2604 --- [main] c.e.s.SofabootFirstApplication           : Started SofabootFirstApplication in 0.467 seconds (JVM running for 1.131)
+2019-04-30 15:15:21.631  INFO 2604 --- [Thread-2] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@4df828d7: startup date [Tue Apr 30 15:15:21 CST 2019]; root of context hierarchy
+2019-04-30 15:15:21.632  INFO 2604 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown

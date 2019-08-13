@@ -16,6 +16,7 @@
         <module>demo-service-a</module>
         <module>demo-service-b</module>
         <module>demo-service-c</module>
+        <module>kaos</module>
     </modules>
     <properties>
 
@@ -88,6 +89,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
         <version>${spring.boot.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>6.14.3</version>
+        <scope>test</scope>
     </dependency>
 </dependencies>
 
