@@ -1,8 +1,6 @@
-package com.linewell.license.platform.common.security.controller;
 
 import com.google.code.kaptcha.Producer;
-import com.newland.paas.common.util.StringUtils;
-import com.newland.paas.paasservice.sysmgr.common.SysMgrConstants;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.MediaType;
@@ -17,13 +15,9 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @author
- * @since 2017/10/30
- */
 @Controller
-@RequestMapping(produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}, value = "/sysmgr/v1/captcha")
-public class CodeController {
+@RequestMapping(produces = {MediaType.APPLICATION_JSON_UTF8_VALUE}, value = "/captcha")
+public class CaptchaController {
     @Autowired
     private Producer captchaProducer = null;
     @Autowired
@@ -37,7 +31,7 @@ public class CodeController {
      * @param response
      * @throws Exception
      */
-    @RequestMapping()
+    @RequestMapping("/get")
     public void getKaptchaImage(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String uuid = StringUtils.getUUID32();
         response.setDateHeader("Expires", 0);
@@ -60,6 +54,18 @@ public class CodeController {
         } finally {
             out.close();
         }
+    }
+
+    /**
+     * 验证码校验
+     * @param reqInfo
+     * @return
+     * @throws
+     */
+    @PostMapping("/validate")
+    public Boolean captchaValidate(@RequestBody LoginInfoVO input)
+    {
+        return captchaValidateService.captchaValidate(input);
     }
 
 }
