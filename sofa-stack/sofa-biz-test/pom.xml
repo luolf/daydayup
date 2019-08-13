@@ -15,7 +15,7 @@
     <modules>
         <module>my-jar</module>
         <module>my-sofa-plugin</module>
-        <module>app-use-my-sofa-plugin</module>
+        <!--<module>app-use-my-sofa-plugin</module>-->
     </modules>
 
 

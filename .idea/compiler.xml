@@ -6,30 +6,41 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="shirojwt" />
-        <module name="parent" />
-        <module name="dubbo-common" />
+        <module name="demo-service-a" />
+        <module name="demo-service-b" />
+        <module name="demo-service-c" />
+        <module name="demo-zipkin" />
         <module name="dubbo-api" />
-        <module name="springb-esapi" />
-        <module name="springbelasticsearch" />
+        <module name="dubbo-common" />
+        <module name="dubbo-test" />
+        <module name="dubbocommon" />
+        <module name="dubbotest" />
+        <module name="first" />
+        <module name="hello-plugin" />
+        <module name="hi-sofa-plugin" />
+        <module name="i10n" />
+        <module name="i18n" />
+        <module name="main" />
+        <module name="my-plugin-jar" />
+        <module name="mypluginjar" />
+        <module name="mysql-analyzer" />
+        <module name="provider" />
+        <module name="say-hello" />
+        <module name="say-hi" />
+        <module name="shiro-jwt" />
+        <module name="shirojwt" />
         <module name="sofa" />
         <module name="sofaboot-first" />
-        <module name="demo-service-c" />
-        <module name="demo-service-b" />
-        <module name="demo-service-a" />
-        <module name="dubbocommon" />
-        <module name="demo-zipkin" />
-        <module name="shiro-jwt" />
-        <module name="test-jar" />
-        <module name="first" />
-        <module name="tkmybatisGenerator" />
-        <module name="dubbotest" />
-        <module name="mypluginjar" />
         <module name="springb-elasticsearch" />
-        <module name="main" />
+        <module name="springb-esapi" />
+        <module name="springbelasticsearch" />
+        <module name="test-jar" />
+        <module name="tk-mybatis-Generator" />
+        <module name="tkmybatisGenerator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="app-use-my-sofa-plugin" target="1.5" />
       <module name="dubboconsumer" target="1.5" />
       <module name="first" target="1.8" />
       <module name="sofaboot" target="1.8" />
