@@ -66,7 +66,7 @@ public class PluginMgrController {
             @ApiImplicitParam(name = "pluginFileName", value = "组件文件名(包含路径)", required = true, dataType = "String")
     })
     public String loadPlugin2() {
-       loadPluginFromJar("F:\\code\\linewell\\daydayup\\springb-dynamic-load-jar\\my-plugin-jar\\target");
+       loadPluginFromJar("F:\\code\\linewell\\daydayup\\springb-dynamic1-load-jar\\my-plugin-jar\\target");
         return "sucess";
     }
 

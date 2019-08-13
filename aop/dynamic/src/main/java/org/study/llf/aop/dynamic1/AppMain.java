@@ -1,4 +1,4 @@
-package org.study.llf.aop.dynamic;
+package org.study.llf.aop.dynamic1;
 
 import java.lang.reflect.Proxy;
 

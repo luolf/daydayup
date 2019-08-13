@@ -1,4 +1,4 @@
-package org.study.llf.aop.dynamic;
+package org.study.llf.aop.dynamic1;
 
 /**
  * Description 类描述
@@ -8,6 +8,6 @@ package org.study.llf.aop.dynamic;
  * Date 2019-07-19
  * Time 11:16
  */
-public interface IBusiness {
-    void doSomeThing();
+public interface IBusiness2 {
+    void doSomeThing2();
 }
