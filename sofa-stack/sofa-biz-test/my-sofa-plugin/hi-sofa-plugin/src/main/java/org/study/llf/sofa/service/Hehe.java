@@ -1,6 +1,5 @@
 package org.study.llf.sofa.service;
 
-import org.study.llf.sofa.say.Say;
 
 import static java.lang.System.out;
 
@@ -15,8 +14,8 @@ import static java.lang.System.out;
 public class Hehe {
     public void test() {
         out.println("s2:"+this.getClass().getClassLoader()+"...loading me...");
-        Say say = new Say();
-        say.hello();
+//        Say say = new Say();
+//        say.hello();
         new TestForSofa().test();
     }
 

@@ -47,4 +47,11 @@ public class My {
             System.out.println(a);
         }
     }
+    @Test
+    public void test2(){
+       Object obj=  new Object();
+
+        JSONObject j2=JSONObject.toJSONString(obj);
+        System.out.println(j2);
+    }
 }
