@@ -1,6 +1,6 @@
 package com.linewell.license.platform.common.security;
 
-import com.linewell.license.platform.common.security.util.JwtTokenUti;
+import com.linewell.license.platform.common.security.util.JwtTokenUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +24,6 @@ public class SpringSecurityApplication {
     @GetMapping("/hello")
     public String hello(){
 
-        return JwtTokenUti.TOKEN_EXPIRED_TIME+"";
+        return JwtTokenUtil.TOKEN_EXPIRED_TIME+"";
     }
 }

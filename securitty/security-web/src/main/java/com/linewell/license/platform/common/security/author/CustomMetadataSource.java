@@ -13,6 +13,7 @@ import org.springframework.util.AntPathMatcher;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Description 类描述
@@ -37,25 +38,27 @@ public class CustomMetadataSource implements FilterInvocationSecurityMetadataSou
      */
     @Override
     public Collection<ConfigAttribute> getAttributes(Object o) {
-
+        System.out.println("CustomMetadataSource--------------------------------------------------"+o);
         String requestUrl = ((FilterInvocation) o).getRequestUrl();
         System.out.println(requestUrl);
-        List<RolePermissionDto> allPermissions = userDetailsFacade.findAllPermissions();
+        Set<RolePermissionDto> allPermissions = userDetailsFacade.findAllPermissions();
         for (RolePermissionDto permissionDto : allPermissions) {
             if (antPathMatcher.match(permissionDto.getUrl(), requestUrl)
                     &&permissionDto.getRoles().size()>0) {
-                List<Integer> roleIds = permissionDto.getRoles();
-                int size = roleIds.size();
+                Object[] roleIds = permissionDto.getRoles().toArray();
+                int size = roleIds.length;
                 String[] values = new String[size];
+
                 for (int i = 0; i < size; i++) {
-                    values[i] = roleIds.get(i).toString();
+                    values[i] = roleIds[i].toString();
                 }
+
+
                 return SecurityConfig.createList(values);
             }
         }
-
-        //没有匹配上的资源，都是登录访问
-        return SecurityConfig.createList("ROLE_LOGIN");
+        //没有匹配上的资源，都是不可访问
+        return SecurityConfig.createList("ROLE_NONE");
     }
     @Override
     public Collection<ConfigAttribute> getAllConfigAttributes() {

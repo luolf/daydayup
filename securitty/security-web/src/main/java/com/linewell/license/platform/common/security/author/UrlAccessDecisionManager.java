@@ -11,28 +11,67 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * Created by sang on 2017/12/28.
+ * Description 类描述
+ *
+ * @author luolifeng
+ * @version 1.0.0
+ * Date 2019-08-13
+ * Time 9:08
  */
 @Component
 public class UrlAccessDecisionManager implements AccessDecisionManager {
     @Override
     public void decide(Authentication auth, Object o, Collection<ConfigAttribute> cas){
-        System.out.println(o);
+        System.out.println("UrlAccessDecisionManager--------------------------------------------------"+o);
+        System.out.println("UrlAccessDecisionManager auth--------------------------------------------------"+auth);
+        System.out.println("UrlAccessDecisionManager cas--------------------------------------------------"+cas);
+
+
+        AtomicBoolean pass= new AtomicBoolean(false);
+        for(ConfigAttribute ca:cas){
+
+            //当前请求需要的权限
+            String needRole = ca.getAttribute();
+            /**
+             * 匿名可访问
+             */
+            if ("-1".equals(needRole)) {
+                pass.set(true);
+                break;
+            }
+
+            /**
+             * 登陆可访问
+             */
+            if ("0".equals(needRole) && !(auth instanceof AnonymousAuthenticationToken)) {
+                pass.set(true);
+                break;
+            }
+            /**
+             * 数据库未做授权配置
+             */
+            if ("ROLE_NONE".equals(needRole)  ) {
+                throw new AccessDeniedException("未做授权配置!");
+            }
+        }
+
+        if(pass.get()) {
+            return;
+        }
+        if (auth instanceof AnonymousAuthenticationToken) {
+//            throw new BadCredentialsException("请先登录");
+            throw new AccessDeniedException("请先登录!");
+        }
         Iterator<ConfigAttribute> iterator = cas.iterator();
         while (iterator.hasNext()) {
             ConfigAttribute ca = iterator.next();
             //当前请求需要的权限
             String needRole = ca.getAttribute();
-            if ("ROLE_LOGIN".equals(needRole)) {
-                if (auth instanceof AnonymousAuthenticationToken) {
-                    throw new BadCredentialsException("未登录");
-                } else {
-                    return;
-                }
-            }
-            //当前用户所具有的权限
+
+            //当前用户所具有的角色
             Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
             for (GrantedAuthority authority : authorities) {
                 if (authority.getAuthority().equals(needRole)) {
@@ -40,7 +79,9 @@ public class UrlAccessDecisionManager implements AccessDecisionManager {
                 }
             }
         }
-        throw new AccessDeniedException("权限不足!");
+
+
+        throw new AccessDeniedException("权限不足o!");
     }
     @Override
     public boolean supports(ConfigAttribute configAttribute) {

@@ -6,6 +6,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
@@ -22,23 +23,39 @@ import java.util.Map;
  * Date: 2019-03-25
  * Time: 10:32
  */
-public class JwtTokenUti {
+@Component
+public class JwtTokenUtil {
     public static final String TOKEN_HEADER = "Authorization";
     public static final String TOKEN_PREFIX = "Bearer ";
     /**
      *   token 过期时间是3600秒，既是1个小时
      */
-    @Value("#{license.security.token.Expired}")
-    public static final long TOKEN_EXPIRED_TIME = 5L;
-
+    @Value("${license.security.token.Expired}")
+    public static  long TOKEN_EXPIRED_TIME = 3600000L;
 
     /**
      * 选择了记住我之后的过期时间为7天
      */
-    @Value("#{license.security.token.ExpiredRemember}")
-    private static final long EXPIRATION_REMEMBER = 50L;
+    @Value("${license.security.token.ExpiredRemember}")
+    private static  long EXPIRATION_REMEMBER = 60L;
 
-     /**
+    public static long getTokenExpiredTime() {
+        return TOKEN_EXPIRED_TIME;
+    }
+
+    public  void setTokenExpiredTime(long tokenExpiredTime) {
+        JwtTokenUtil.TOKEN_EXPIRED_TIME = tokenExpiredTime;
+    }
+
+    public static long getExpirationRemember() {
+        return EXPIRATION_REMEMBER;
+    }
+
+    public  void setExpirationRemember(long expirationRemember) {
+        JwtTokenUtil.EXPIRATION_REMEMBER = expirationRemember;
+    }
+
+    /**
      * jwt 加密解密密钥
      */
     private static final String JWT_SECRET = "bGluZXdlbGwtbGljZW5zZS1yb28=";
@@ -107,7 +124,7 @@ public class JwtTokenUti {
         SecretKey secretKey = generalKey(JWT_SECRET);
 
         JwtBuilder builder = Jwts.builder()
-                .setClaims(myClaims).setExpiration(expire)
+                .setClaims(myClaims).setSubject(myClaims.get("username").toString()).setExpiration(expire)
                 .setId(JWT_ID)
                 .setIssuedAt(iat)
                 .signWith(SignatureAlgorithm.HS512, secretKey);
@@ -150,7 +167,11 @@ public class JwtTokenUti {
      * Date 2019/3/26
      */
     public static String getUsername(String token){
-        return getClaims(token).getSubject();
+        Claims body =getClaims(token);
+        if(body==null){
+            return null;
+        }
+        return body.getSubject();
     }
 
     // 是否已过期
@@ -238,5 +259,12 @@ public class JwtTokenUti {
         System.out.println("Claims："+getClaims(token));
         System.out.println("是否过期："+isExpiration(token));
 
+        String passwd="123456";
+        String encodePasswd=JwtTokenUtil.encodePasswd(passwd);
+        System.out.println("encodePasswd："+encodePasswd );
+        System.out.println("encodePasswd2："+JwtTokenUtil.encodePasswd(passwd) );
+        boolean match=JwtTokenUtil.matchPasswd(passwd,encodePasswd);
+        System.out.println("match："+match );
+        System.out.println("match2："+JwtTokenUtil.matchPasswd("12345 ",JwtTokenUtil.encodePasswd(passwd) ) );
     }
 }

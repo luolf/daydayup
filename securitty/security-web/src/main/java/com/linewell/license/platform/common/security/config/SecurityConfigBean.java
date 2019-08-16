@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @PropertySource(value = { "classpath:securityConfig.properties" })
-@ConfigurationProperties(prefix="license.security")
+@ConfigurationProperties(prefix="license.security.form")
 @Getter
 @Setter
 @ToString

@@ -3,6 +3,7 @@ package com.linewell.license.platform.common.security.authen;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.linewell.license.platform.common.security.facade.dto.SysRoleDto;
 import com.linewell.license.platform.common.security.facade.dto.UserInfoDto;
+import com.linewell.license.platform.common.security.facade.dto.UserPrincipalDto;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,15 +24,16 @@ public class JwtUserDetails implements UserDetails {
     private final String username;
     private final String password;
     private final String userId;
-
+    private final UserPrincipalDto userPrincipalDto;
     private final Date lastPasswordResetDate;
-    private List<SysRoleDto> roleList ;
+    private Set<SysRoleDto> roleList ;
 
     public JwtUserDetails(UserInfoDto userInfoDto) {
 
         this.username = userInfoDto.getUsername();
-        this.password = userInfoDto.getUsername();
+        this.password = userInfoDto.getPassword();
         this.roleList = userInfoDto.getRoleList();
+        this.userPrincipalDto=(UserPrincipalDto)userInfoDto;
         this.userId = userInfoDto.getUserId();
         this.lastPasswordResetDate=null;
     }

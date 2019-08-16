@@ -1,5 +1,6 @@
 package  com.linewell.license.platform.common.security.aop;
 
+import com.linewell.license.platform.common.security.annotation.ParameterBase64;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -13,11 +14,20 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.List;
 
+
+/**
+ * Description 类描述
+ *
+ * @author luolifeng
+ * @version 1.0.0
+ * Date 2019-08-13
+ * Time 9:08
+ */
 @Component
 @Aspect
 public class Base64Aspect {
 	
-	@Pointcut(value = "@annotation( com.linewell.license.platform.common.annotation.Base64Parameter)")
+	@Pointcut(value = "@annotation(com.linewell.license.platform.common.security.annotation.ParameterBase64)")
 	public void access() {
 
 	}
@@ -30,7 +40,7 @@ public class Base64Aspect {
 		Method method = methodSignature.getMethod();
 		String[] parameterNames = methodSignature.getParameterNames();
 		Object[] parameterNamesValues = joinPoint.getArgs();
-		Base64Parameter base64Annotation = AnnotationUtils.getAnnotation(method, Base64Parameter.class);
+		ParameterBase64 base64Annotation = AnnotationUtils.getAnnotation(method, ParameterBase64.class);
 		String[] annotationValue = base64Annotation.value();
 		List<String> annotationValueList = Arrays.asList(annotationValue);
 		int index = 0;

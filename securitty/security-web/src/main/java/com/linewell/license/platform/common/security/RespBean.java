@@ -1,5 +1,12 @@
 package com.linewell.license.platform.common.security;
-
+/**
+ * Description 类描述
+ *
+ * @author luolifeng
+ * @version 1.0.0
+ * Date 2019-08-13
+ * Time 9:08
+ */
 public class RespBean {
     private Integer status;
     private String msg;
