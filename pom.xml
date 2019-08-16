@@ -37,6 +37,7 @@
         <module>universal-capability-service</module>
         <module>code-translate</module>
         <module>securitty</module>
+        <module>my-security-parent</module>
 
     </modules>
 
