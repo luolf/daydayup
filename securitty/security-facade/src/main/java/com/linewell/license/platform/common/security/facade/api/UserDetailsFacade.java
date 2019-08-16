@@ -4,6 +4,7 @@ import com.linewell.license.platform.common.security.facade.dto.RolePermissionDt
 import com.linewell.license.platform.common.security.facade.dto.UserInfoDto;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Description 类描述
@@ -15,5 +16,6 @@ import java.util.List;
  */
 public interface UserDetailsFacade {
     public UserInfoDto findUserInfoByName(String userName);
-    public List<RolePermissionDto> findAllPermissions();
+    public UserInfoDto findUserInfoByPhone(String phone);
+    public Set<RolePermissionDto> findAllPermissions();
 }

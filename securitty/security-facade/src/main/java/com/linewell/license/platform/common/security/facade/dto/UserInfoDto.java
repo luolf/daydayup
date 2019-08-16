@@ -20,10 +20,6 @@ import java.util.Set;
 @Setter
 @Getter
 @ToString
-public class UserInfoDto {
-    private String username;
+public class UserInfoDto extends UserPrincipalDto{
     private String password;
-    private String userId;
-
-    private List<SysRoleDto> roleList = new ArrayList<>();
 }

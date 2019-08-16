@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Description 类描述
@@ -17,5 +18,5 @@ import java.util.List;
 @Getter
 public class RolePermissionDto {
     public String url;
-    public List<Integer> roles;
+    public Set<Integer> roles;
 }

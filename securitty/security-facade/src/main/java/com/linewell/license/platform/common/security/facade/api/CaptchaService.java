@@ -13,12 +13,7 @@ public interface CaptchaService {
      * @return
      * @throws
      */
-    boolean captchaValidate(String captchaID, String inputCaptcha) ;
+    boolean captchaValidate(String captchaID, String captchaText) ;
 
-    /**
-     *
-     * @param loginInfoVO
-     * @return
-     * @throws
-    boolean captchaValidate(LoginInfoVO loginInfoVO)  ;
+
 }
