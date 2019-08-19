@@ -96,8 +96,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/error",
                 "/auth/**",
                 "/favicon.ico",
-                "/css/**","/js/**","/image/**","/lib/**","/images/**","/img/**","/service/token",
-                "/webapp/**","/META-INF/resources/**"
+                "/css/**",
+                "/js/**",
+                "/image/**",
+                "/lib/**",
+                "/images/**",
+                "/img/**",
+                "/service/token",
+                "/webapp/**",
+                "/META-INF/resources/**"
         );
 
     }
@@ -119,15 +126,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 对于获取token的rest api要允许匿名访问，没看到效果
 //                .antMatchers("/auth/**","/auth/captcha/**","/login").permitAll()
                 // 除上面外的所有请求全部需要鉴权认证
-                .anyRequest().authenticated()
-                .withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
-                    @Override
-                    public <T extends FilterSecurityInterceptor> T postProcess(T o) {
-                        o.setSecurityMetadataSource(customMetadataSource);
-                        o.setAccessDecisionManager(urlAccessDecisionManager);
-                        return o;
-                    }
-                 })
+//                .anyRequest().authenticated()
+//                .withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
+//                    @Override
+//                    public <T extends FilterSecurityInterceptor> T postProcess(T o) {
+//                        o.setSecurityMetadataSource(customMetadataSource);
+//                        o.setAccessDecisionManager(urlAccessDecisionManager);
+//                        return o;
+//                    }
+//                 })
                 .and()
                 .formLogin()
                     .loginPage(securityConfigBean.getLoginPage())
