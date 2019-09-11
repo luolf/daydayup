@@ -1,7 +1,7 @@
 package com.linewell.license.platform.common.security.authen;
 
-import com.linewell.license.platform.common.security.facade.api.UserDetailsFacade;
-import com.linewell.license.platform.common.security.facade.dto.UserInfoDto;
+import com.linewell.license.platform.security.facade.dto.UserDetailDto;
+import com.linewell.license.platform.security.facade.service.AuthenCallBackFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -19,14 +19,14 @@ import org.springframework.stereotype.Component;
 @Component("customUserDetailsService")
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired
-    UserDetailsFacade userDetailsFacade;
+   @Autowired
+   AuthenCallBackFacade authenCallBackFacade;
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        UserInfoDto userInfoDto= userDetailsFacade.findUserInfoByName(userName);
-        if(userInfoDto==null){
+        UserDetailDto userDetailDto= authenCallBackFacade.findUserByUserName(userName).getData();
+        if(userDetailDto==null){
             throw new UsernameNotFoundException("用户名不对");
         }
-        return new JwtUserDetails(userInfoDto);
+         return new JwtUserDetails(userDetailDto);
     }
 }

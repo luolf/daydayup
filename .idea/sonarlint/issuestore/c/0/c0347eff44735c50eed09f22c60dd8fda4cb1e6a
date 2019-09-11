@@ -1,3 +1,4 @@
 
-Gsquid:S1481"&Remove this unused "j" local variable.(·»°Ìýÿÿÿÿ8ª¹ƒ‚™-
-rsquid:S2068"V'password' detected in this expression, review this potentially hard-coded credential.(õÙÜó8ª¹ƒ‚™-
+Isquid:S1481"&Remove this unused "j" local variable.(·»°Ìýÿÿÿÿ8ª¹ƒ‚™-
+tsquid:S2068$"V'password' detected in this expression, review this potentially hard-coded credential.(õÙÜó8ª¹ƒ‚™-
+¶%squid:RedundantThrowsDeclarationCheck"yRemove the declaration of thrown exception 'org.apache.shiro.authc.AuthenticationException' which is a runtime exception.(Ùº­©ùÿÿÿÿ8®‚š£È-

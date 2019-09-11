@@ -1,5 +1,6 @@
 package com.linewell.license.platform.common.security.controller;
 
+import com.linewell.license.platform.common.model.session.SessionContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class RegLoginController {
+
     @RequestMapping("/login_p")
     public String login() {
         return  "controller返回:尚未登录，请登录!";
@@ -25,10 +27,11 @@ public class RegLoginController {
     }
     @PostMapping("/hello")
     public String hello2() {
-        return "controller返回:PostMapping";
+        return "controller返回:PostMapping:"+ SessionContext.getSession();
     }
     @PostMapping("/user/findUsers")
     public String hello3() {
+
         return "findUsers controller返回:PostMapping";
     }
 
@@ -39,7 +42,7 @@ public class RegLoginController {
 
     @PostMapping("/user/delete")
     public String hello5() {
-        return "delete controller返回:PostMapping";
+        return "delete controller返回:PostMapping"+ SessionContext.getSession();
     }
     @GetMapping("/user/delete")
     public String hello6() {

@@ -3,18 +3,27 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>securitty</artifactId>
-        <groupId>com.linewell.license.platform.common.security</groupId>
+        <artifactId>common-security</artifactId>
+        <groupId>com.linewell.license.platform</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
- 
-    <artifactId>security-facade</artifactId>
 
-<dependencies>
-    <dependency>
-        <groupId>io.springfox</groupId>
-        <artifactId>springfox-swagger2</artifactId>
-    </dependency>
-</dependencies>
+    <artifactId>common-security-facade</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+        </dependency>
+        <dependency>
+            <artifactId>license-platform-common-model</artifactId>
+            <groupId>com.linewell.license.platform</groupId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

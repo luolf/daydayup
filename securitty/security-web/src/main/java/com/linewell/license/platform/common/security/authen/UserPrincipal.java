@@ -1,14 +1,9 @@
 package com.linewell.license.platform.common.security.authen;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.linewell.license.platform.common.security.facade.dto.SysRoleDto;
-import com.linewell.license.platform.common.security.facade.dto.UserInfoDto;
-import com.linewell.license.platform.common.security.facade.dto.UserPrincipalDto;
+
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.*;
 

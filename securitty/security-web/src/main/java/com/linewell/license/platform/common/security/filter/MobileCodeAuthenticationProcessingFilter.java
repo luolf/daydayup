@@ -1,6 +1,7 @@
 package com.linewell.license.platform.common.security.filter;
 
 import com.linewell.license.platform.common.security.token.MobileCodeAuthenticationToken;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
@@ -21,15 +22,20 @@ import javax.servlet.http.HttpServletResponse;
  * Time 17:26
  */
 public class MobileCodeAuthenticationProcessingFilter extends AbstractAuthenticationProcessingFilter {
-    public static final String SPRING_SECURITY_FORM_MOBILE_KEY = "mobile";
-    public static final String SPRING_SECURITY_FORM_CODE_KEY = "code";
 
-    private String mobileParameter = "mobile";
-    private String codeParameter = "code";
+    @Value("${license.security.sms.phoneNumParameter:mobile}")
+    private String mobileParameter;
+    @Value("${license.security.sms.codeParameter:code}")
+    private String codeParameter;
+
+
     private boolean postOnly = true;
+//    public MobileCodeAuthenticationProcessingFilter() {
+//        this(null);
+//    }
 
-    public MobileCodeAuthenticationProcessingFilter() {
-        super(new AntPathRequestMatcher("/mobileLogin", "POST"));
+    public MobileCodeAuthenticationProcessingFilter(@Value("${license.security.sms.loginProcessingUrl:/mobileLogin}") String loginProcessingUrl) {
+        super(new AntPathRequestMatcher( loginProcessingUrl, "POST"));
     }
 
     @Override

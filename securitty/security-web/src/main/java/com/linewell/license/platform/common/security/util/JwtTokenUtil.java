@@ -1,19 +1,18 @@
 package com.linewell.license.platform.common.security.util;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtBuilder;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Value;
+import com.alibaba.fastjson.JSON;
+import com.linewell.license.platform.common.model.session.SessionInfo;
+import com.linewell.license.platform.common.security.authen.JwtUserDetails;
+import com.linewell.license.platform.common.security.authen.UserPrincipal;
+import com.linewell.license.platform.common.security.config.SecurityConfigBean;
+import com.linewell.license.platform.common.security.dto.MidToken;
+import io.jsonwebtoken.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.util.Base64;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Description: 类描述
@@ -25,107 +24,124 @@ import java.util.Map;
  */
 @Component
 public class JwtTokenUtil {
-    public static final String TOKEN_HEADER = "Authorization";
-    public static final String TOKEN_PREFIX = "Bearer ";
-    /**
-     *   token 过期时间是3600秒，既是1个小时
-     */
-    @Value("${license.security.token.Expired}")
-    public static  long TOKEN_EXPIRED_TIME = 3600000L;
 
     /**
-     * 选择了记住我之后的过期时间为7天
+     * token 过期时间 单位秒
      */
-    @Value("${license.security.token.ExpiredRemember}")
-    private static  long EXPIRATION_REMEMBER = 60L;
 
-    public static long getTokenExpiredTime() {
-        return TOKEN_EXPIRED_TIME;
-    }
+    private static long TOKEN_EXPIRED_TIME = 11L;
+    /**
+     * reflush token 过期时间 单位秒
+     */
 
-    public  void setTokenExpiredTime(long tokenExpiredTime) {
-        JwtTokenUtil.TOKEN_EXPIRED_TIME = tokenExpiredTime;
-    }
+    private static long REFLUSH_TOKEN_EXPIRED_TIME = 3600L;
+    /**
+     * 选择了记住我之后的过期时间 单位秒
+     */
 
-    public static long getExpirationRemember() {
-        return EXPIRATION_REMEMBER;
-    }
-
-    public  void setExpirationRemember(long expirationRemember) {
-        JwtTokenUtil.EXPIRATION_REMEMBER = expirationRemember;
-    }
+    private static long EXPIRATION_REMEMBER = 7 * 24 * 3600L;
 
     /**
      * jwt 加密解密密钥
      */
-    private static final String JWT_SECRET = "bGluZXdlbGwtbGljZW5zZS1yb28=";
+    private static String JWT_SECRET = "bGluZXdlbGwtbGljZW5zZS1yb28=";
 
     private static final String JWT_ID = "tokenId";
 
-    private static final Integer STRENGTH = 10;
-    /**
-     * 登录密码加密器
-     */
-    private static BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder(STRENGTH);
 
+    public static void setConfigInfo(SecurityConfigBean securityConfigBean) {
+        JWT_SECRET = securityConfigBean.getJwtSecret();
+        TOKEN_EXPIRED_TIME = securityConfigBean.getTokenExpiredTime();
+        EXPIRATION_REMEMBER = securityConfigBean.getTokenExpiredTimeRemember();
+        REFLUSH_TOKEN_EXPIRED_TIME = securityConfigBean.getReflushTokenExpiredTime();
 
-    /**
-     * Description
-     * @return 加密后的密钥
-     * @param  passwd 需要加密的字符串
-     * @author luolifeng
-     * Date 2019/3/26
-     */
-    public static String encodePasswd(String passwd){
-       return passwordEncoder.encode(passwd);
     }
 
-    /**
-     * Description
-     * @return true密码匹配
-     * @param passwd 加密前原文
-     * @param secretPasswd 加密后密钥
-     * @author luolifeng
-     * Date 2019/3/26
-     */
-    public static boolean matchPasswd(String passwd,String secretPasswd) {
-        return passwordEncoder.matches(passwd,secretPasswd);
-    }
 
     /**
      * Description 由字符串生成加密key
-     * @return 密钥SecretKey
+     *
      * @param base64key 通过一个base64的字符串来生产 SecretKey
+     * @return 密钥SecretKey
      * @author luolifeng
      * Date 2019/3/26
      */
     private static SecretKey generalKey(String base64key) {
-        byte[] encodedKey=Base64.getDecoder().decode(base64key);
+
+        byte[] encodedKey = Base64.getDecoder().decode(base64key);
         return new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
     }
 
-    public static String generalToken(Map<String, Object> myClaims, boolean isRememberMe) {
+    public static MidToken generalMidToken(SessionInfo sessionInfo) {
+        MidToken midToken = new MidToken();
+        String id=UUIDUtil.getUUID();
+        midToken.setToken(generalToken(sessionInfo,id));
+        midToken.setReflushtoken(generalReflushToken(sessionInfo,id));
+        return midToken;
+    }
+
+    private static String generalToken(SessionInfo sessionInfo,String id) {
+        return generalToken(sessionInfo, false,id);
+    }
+    private static String generalToken(SessionInfo sessionInfo) {
+        return generalToken(sessionInfo, false,UUIDUtil.getUUID());
+    }
+    private static String generalReflushToken(SessionInfo sessionInfo) {
+        return generalToken(sessionInfo, REFLUSH_TOKEN_EXPIRED_TIME,UUIDUtil.getUUID());
+    }
+
+
+    private static String generalReflushToken(SessionInfo sessionInfo,String id) {
+        return generalToken(sessionInfo, REFLUSH_TOKEN_EXPIRED_TIME,id);
+    }
+
+    private static String generalToken(SessionInfo sessionInfo, boolean isRememberMe,String id) {
         long expireTime = isRememberMe ? EXPIRATION_REMEMBER : TOKEN_EXPIRED_TIME;
-        return generalToken(myClaims,expireTime);
+        return generalToken(sessionInfo, expireTime,id);
+    }
+
+    private static String generalToken(SessionInfo sessionInfo, long expireTime,String id) {
+
+        long millis = System.currentTimeMillis();
+        Date iat = new Date(millis);
+        Date expire = new Date(millis + expireTime * 1000);
+        SecretKey secretKey = generalKey(JWT_SECRET);
+
+        JwtBuilder builder = Jwts.builder().setClaims(ConvertUtil.beanToMap(sessionInfo))
+                .setSubject(sessionInfo.getUserName()).setExpiration(expire)
+//                .setId(JWT_ID)
+                .setId(id)
+                .setIssuedAt(iat)
+                .signWith(SignatureAlgorithm.HS512, secretKey);
+
+        return builder.compact();
+
+    }
+
+    private static String generalToken(Map<String, Object> myClaims, boolean isRememberMe,String id) {
+        long expireTime = isRememberMe ? EXPIRATION_REMEMBER : TOKEN_EXPIRED_TIME;
+        return generalToken(myClaims, expireTime, id);
     }
 
     /**
      * Description
+     *
+     * @param myClaims   私有键值对
+     * @param expireTime 过期步长，单位秒
      * @return token
-     * @param myClaims 私有键值对
-     * @param expireTime  过期步长，单位秒
      * @author luolifeng
      * Date 2019/3/26
      */
-    private static String generalToken(Map<String, Object> myClaims, long expireTime) {
-        long millis=System.currentTimeMillis();
+    private static String generalToken(Map<String, Object> myClaims, long expireTime,String id) {
+        long millis = System.currentTimeMillis();
         Date iat = new Date(millis);
-        Date expire = new Date(millis+expireTime*1000);
+        Date expire = new Date(millis + expireTime * 1000);
         SecretKey secretKey = generalKey(JWT_SECRET);
 
         JwtBuilder builder = Jwts.builder()
-                .setClaims(myClaims).setSubject(myClaims.get("username").toString()).setExpiration(expire)
-                .setId(JWT_ID)
+                .setClaims(myClaims).setSubject(myClaims.get("account").toString()).setExpiration(expire)
+//                .setId(JWT_ID)
+                .setId(id)
                 .setIssuedAt(iat)
                 .signWith(SignatureAlgorithm.HS512, secretKey);
 
@@ -134,61 +150,114 @@ public class JwtTokenUtil {
 
     /**
      * Description
-     * @return token
+     *
      * @param myClaims 私有键值对
+     * @return token
      * @author luolifeng
      * Date 2019/3/26
      */
-    public static String generalToken(Map<String, Object> myClaims) {
-        return  generalToken(myClaims,TOKEN_EXPIRED_TIME);
+    public static String generalToken(Map<String, Object> myClaims,String id) {
+        return generalToken(myClaims, TOKEN_EXPIRED_TIME,id);
     }
 
 
     /**
      * Description 校验token
-     * @return true表示校验通过，否则不通过
+     *
      * @param token 被校验的token
+     * @return true表示校验通过，否则不通过
      * @author luolifeng
      * Date 2019/3/26
      */
     public static boolean verifyToken(String token) {
-
-        Claims claims=getClaims(token);
+        Claims claims = getClaims(token);
         return claims != null;
-
-
     }
 
     /**
      * Description
-     * @return 用户名
+     *
      * @param token
+     * @return 用户名
      * @author luolifeng
      * Date 2019/3/26
      */
-    public static String getUsername(String token){
-        Claims body =getClaims(token);
-        if(body==null){
+    public static String getUsername(String token) {
+        Claims body = getClaims(token);
+        if (body == null) {
             return null;
         }
         return body.getSubject();
     }
-
+    /**
+     * Description
+     *
+     * @param token
+     * @return tokenId
+     * @author luolifeng
+     * Date 2019/3/26
+     */
+    public static String getTokenId(String token) {
+        Claims body = getClaims(token);
+        if (body == null) {
+            return null;
+        }
+        return body.getId();
+    }
+    /**
+     * Description
+     *
+     * @param token
+     * @return tokenId
+     * @author luolifeng
+     * Date 2019/3/26
+     */
+    public static Date getTokenExpiredTime(String token) {
+        Claims body = getClaims(token);
+        if (body == null) {
+            return null;
+        }
+        return body.getExpiration();
+    }
     // 是否已过期
-    public static boolean isExpiration(String token){
-        Claims claims;
+    public static boolean isExpiration(String token) {
         try {
             return getClaims(token).getExpiration().before(new Date());
-        } catch (Exception e) {
+
+        } catch (SignatureException e) {
+
+        } catch (ExpiredJwtException e) {
             return true;
+        } catch (Exception e) {
+
         }
+        return false;
+    }
+
+
+
+    /**
+     * Description
+     *
+     * @param token 合法token
+     * @return 非法token返回null, 否则转换token中的playload为SessionInfo对象返回
+     * @author luolifeng
+     * Date 2019/3/26
+     */
+    public static SessionInfo parseToken(String token) {
+        SecretKey key = generalKey(JWT_SECRET);
+        Claims claims = Jwts.parser().setSigningKey(key).parseClaimsJws(token).getBody();
+        SessionInfo sessionInfo = JSON.parseObject(JSON.toJSONString(claims), SessionInfo.class);
+        sessionInfo.setIat(sessionInfo.getIat() / 1000);
+        return sessionInfo;
 
     }
 
     /**
      * Description
-     * @return 非法token返回null,否则返回token中的playload内容
+     *
      * @param token 合法token
+     * @return 非法token返回null, 否则返回token中的playload内容
      * @author luolifeng
      * Date 2019/3/26
      */
@@ -205,66 +274,78 @@ public class JwtTokenUtil {
 
     /**
      * Description
-     * @return 传入的token异常则返回null,否则返回token中的用户账号
+     *
      * @param token 合法token
+     * @return 传入的token异常则返回null, 否则返回token中的用户账号
      * @author luolifeng
      * Date 2019/3/26
      */
     public static String getAccount(String token) {
-        Claims body =getClaims(token);
-        if(body==null){
+        Claims body = getClaims(token);
+        if (body == null) {
             return null;
         }
-        return (String)(body.get("account"));
+        return (String) (body.get("account"));
 
     }
 
-    /**
-     * Description
-     * @return 传入的token异常则返回null,否则返回token中的用户账号
-     * @param token 合法token
-     * @author luolifeng
-     * Date 2019/3/26
-     */
-//    public static MySessionInfo getMySessionInfo(String token) {
-//        MySessionInfo mySessionInfo=new MySessionInfo();
-//        Claims body =getClaims(token);
-//        if(body==null){
-//            return mySessionInfo;
-//        }
-//        mySessionInfo.setAccount((String)body.get("account"));
-//        mySessionInfo.setIat(body.getIssuedAt().getTime() / 1000);
-//        mySessionInfo.setUserId((String)body.get("userId"));
-//        mySessionInfo.setUserName((String)body.get("userName"));
-//        return mySessionInfo;
-//
-//    }
+    public static SessionInfo generalSessionInfo(JwtUserDetails principal) {
+        SessionInfo sessionInfo = new SessionInfo();
+        sessionInfo.setUserId(principal.getUserId());
+        sessionInfo.setUserName(principal.getUsername());
+        //要支持语言切换功能，则不应该把语言信息放到sessionInfo,后续调整
+        sessionInfo.setLanguage("zh_CN");
+        sessionInfo.setRoleIdList(principal.getRoleList());
+        sessionInfo.setIat(System.currentTimeMillis());
+        sessionInfo.setBelongAreaId(principal.getBelongAreaId());
+        sessionInfo.setBelongOrgId(principal.getBelongOrgId());
+        return sessionInfo;
+    }
+
     public static void main(String[] args) throws InterruptedException {
         Map<String, Object> myClaims = new HashMap<>(16);
-        myClaims.put("account","license");
-        myClaims.put("userId","userId1001");
-        myClaims.put("userName","llf");
-        myClaims.put("account","license");
+        myClaims.put("account", "license");
+        myClaims.put("userId", "userId1001");
+        myClaims.put("account", "llf");
+        myClaims.put("account", "license");
 
-        String token=generalToken(myClaims,false);
+        SessionInfo sessionInfo = new SessionInfo();
+        sessionInfo.setUserId(1001L);
+//        sessionInfo.setUserName("llf");
+//        Set<Long> roleIdList=new HashSet<>();
+//        roleIdList.add(1L);
+//        roleIdList.add(2L);
+//        sessionInfo.setRoleIdList(roleIdList);
+
+        String token = generalToken(sessionInfo, false,"");
+        SecretKey key = generalKey(JWT_SECRET);
+
+        Jws<Claims> jwts = Jwts.parser().setSigningKey(key).parseClaimsJws(token);
+        Claims claims = jwts.getBody();
+        claims.getId();
+
 //        String token="eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyTmFtZSI6ImxsZiIsImV4cCI6MTU2NTY4OTQzMSwidXNlcklkIjoidXNlcklkMTAwMSIsImlhdCI6MTU2NTY4OTM4MSwiYWNjb3VudCI6ImxpY2Vuc2UiLCJqdGkiOiJ0b2tlbklkIn0.MtMFFQY36XcSxXoFf6uOZeEARQPeAXlXK-KnOZuMJKFHypxYiKOfbxVW8y_zQ6WdwgRzlsH90q4zmfq49cgsdQ";
-        System.out.println("token："+token+"|");
-        System.out.println("account："+getAccount(token));
-        System.out.println("Claims："+getClaims(token));
-        System.out.println("是否过期："+isExpiration(token));
-        System.out.println("当期日期："+new Date());
-        System.out.println("Expiration："+ getClaims(token).getExpiration());
-        Thread.sleep(6000);
+        System.out.println("token：" + token + "|");
+        System.out.println("parseToken：" + parseToken(token));
+        System.out.println("Claims：" + getClaims(token));
+        System.out.println("是否过期：" + isExpiration(token));
+        System.out.println("claims.getId()：" + getClaims(token).getId());
+        System.out.println("当期日期：" + new Date());
+        System.out.println("Expiration：" + getClaims(token).getExpiration());
+        Thread.sleep(1000);
 
-        System.out.println("Claims："+getClaims(token));
-        System.out.println("是否过期："+isExpiration(token));
+        System.out.println("Claims：" + getClaims(token));
+        System.out.println("是否过期：" + isExpiration(token));
+        System.out.println(parseToken(null));
+        System.out.println("是否过期：" + isExpiration(null));
+        BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(10);
+        String passwd = "123456";
+        for (int i = 0; i < 5; i++) {
+            System.out.println("encode passwd：" + bCryptPasswordEncoder.encode(passwd));
+        }
 
-        String passwd="123456";
-        String encodePasswd=JwtTokenUtil.encodePasswd(passwd);
-        System.out.println("encodePasswd："+encodePasswd );
-        System.out.println("encodePasswd2："+JwtTokenUtil.encodePasswd(passwd) );
-        boolean match=JwtTokenUtil.matchPasswd(passwd,encodePasswd);
-        System.out.println("match："+match );
-        System.out.println("match2："+JwtTokenUtil.matchPasswd("12345 ",JwtTokenUtil.encodePasswd(passwd) ) );
+        System.out.println(Boolean.valueOf("True"));
+
+
     }
 }

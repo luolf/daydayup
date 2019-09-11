@@ -6,57 +6,69 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="app-use-my-sofa-plugin" />
-        <module name="cglib" />
-        <module name="code-translate" />
-        <module name="custom-loader" />
-        <module name="demo-service-a" />
-        <module name="demo-service-b" />
-        <module name="demo-service-c" />
-        <module name="demo-zipkin" />
-        <module name="dubbo-api" />
         <module name="dubbo-common" />
-        <module name="dubbo-test" />
-        <module name="dubbocommon" />
-        <module name="dubbotest" />
-        <module name="dynamic" />
-        <module name="facade (1) (org.study.llf.sofa)" />
-        <module name="facade (2) (com.linewell.license.platform.common.translate)" />
-        <module name="first" />
-        <module name="hello-plugin" />
-        <module name="hi-sofa-plugin" />
-        <module name="i10n" />
-        <module name="i18n" />
-        <module name="instrumentation" />
+        <module name="facade" />
         <module name="jvm-classload-test" />
-        <module name="kaos" />
-        <module name="main" />
-        <module name="my-plugin-jar" />
-        <module name="mypluginjar" />
-        <module name="mysql-analyzer" />
-        <module name="mysqlanalyzer" />
-        <module name="provider" />
-        <module name="say-hello" />
-        <module name="say-hi" />
-        <module name="securitty-web" />
-        <module name="security-facade" />
-        <module name="security-service" />
-        <module name="service" />
-        <module name="shiro-jwt" />
-        <module name="shirojwt" />
-        <module name="sofaboot-first" />
-        <module name="sofastack" />
-        <module name="springb-elasticsearch" />
         <module name="springb-esapi" />
-        <module name="springbelasticsearch" />
-        <module name="test-jar" />
-        <module name="tk-mybatis-Generator" />
-        <module name="tkmybatisGenerator" />
+        <module name="i10n" />
+        <module name="securityauth2facade" />
+        <module name="code-translate" />
+        <module name="facade (1) (org.study.llf.sofa)" />
+        <module name="securitty-service" />
+        <module name="securitty-web" />
+        <module name="kaos" />
+        <module name="securityauth2service" />
+        <module name="dubbotest" />
+        <module name="demo-service-b" />
+        <module name="customloader" />
+        <module name="securityauth2deploy" />
+        <module name="instrumentation" />
+        <module name="common-facade" />
+        <module name="i18n" />
+        <module name="dubbo-test" />
+        <module name="security-service" />
+        <module name="main" />
+        <module name="demo-service-c" />
+        <module name="provider" />
+        <module name="demo-service-a" />
+        <module name="shiro-jwt" />
+        <module name="securitty-facade" />
+        <module name="dubbo-api" />
+        <module name="mysqlanalyzer" />
+        <module name="cglib" />
+        <module name="facade (2) (com.linewell.license.platform.common.translate)" />
+        <module name="codetranslate" />
+        <module name="say-hi" />
+        <module name="dubbocommon" />
+        <module name="my-plugin-jar" />
         <module name="web" />
+        <module name="springb-elasticsearch" />
+        <module name="custom-loader" />
+        <module name="demo-zipkin" />
+        <module name="sofaboot-first" />
+        <module name="shirojwt" />
+        <module name="test-jar" />
+        <module name="securitywebcontroller" />
+        <module name="springbelasticsearch" />
+        <module name="first" />
+        <module name="hi-sofa-plugin" />
+        <module name="service" />
+        <module name="mypluginjar" />
+        <module name="tkmybatisGenerator" />
+        <module name="dynamic" />
+        <module name="mysql-analyzer" />
+        <module name="say-hello" />
+        <module name="deploy" />
+        <module name="security-facade" />
+        <module name="jvmclassloadtest" />
+        <module name="tk-mybatis-Generator" />
+        <module name="hello-plugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="app-use-my-sofa-plugin" target="1.5" />
       <module name="appusemysofaplugin" target="1.5" />
+      <module name="deploy2" target="1.8" />
       <module name="dubboconsumer" target="1.5" />
       <module name="first" target="1.8" />
       <module name="helloplugin" target="1.5" />
@@ -71,6 +83,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cglib" options="-parameters" />
+      <module name="codetranslate" options="-parameters" />
+      <module name="customloader" options="-parameters" />
       <module name="demo-service-a" options="" />
       <module name="demo-service-b" options="" />
       <module name="demo-service-c" options="" />
@@ -79,13 +94,17 @@
       <module name="dubbo-api" options="" />
       <module name="dubbo-common" options="-parameters" />
       <module name="dubbotest" options="-parameters" />
+      <module name="dynamic" options="-parameters" />
       <module name="first" options="-parameters" />
       <module name="i10n" options="-parameters" />
       <module name="i18n" options="-parameters" />
+      <module name="instrumentation" options="-parameters" />
       <module name="main" options="-parameters" />
+      <module name="my-security-parent" options="" />
       <module name="mypluginjar" options="-parameters" />
       <module name="mysqlanalyzer" options="-parameters" />
       <module name="parent" options="-parameters" />
+      <module name="securityauth2" options="" />
       <module name="shiro-jwt" options="-parameters" />
       <module name="sofa" options="" />
       <module name="sofaboot" options="-parameters" />

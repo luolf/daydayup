@@ -1,13 +1,12 @@
 package com.linewell.license.platform.common.security.facade.dto;
 
+import com.linewell.license.platform.security.facade.dto.UserRoleDto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -24,8 +23,8 @@ import java.util.Set;
 public class UserPrincipalDto implements Serializable {
     public String username;
     public String organization;
-    private String userId;
+    private Long userId;
     private String phone;
-    private Set<SysRoleDto> roleList =  new HashSet<>();
-    private Set<SystemDto> systemList =  new HashSet<>();
+    private Set<Long> roleList =  new HashSet<>();
+    private Set<Long> systemList =  new HashSet<>();
 }

@@ -1,14 +1,15 @@
 package com.linewell.license.platform.common.security.provider;
 
-import com.linewell.license.platform.common.security.authen.UserPrincipal;
-import com.linewell.license.platform.common.security.facade.api.UserDetailsFacade;
-import com.linewell.license.platform.common.security.facade.dto.UserInfoDto;
-import com.linewell.license.platform.common.security.facade.dto.UserPrincipalDto;
+import com.linewell.license.platform.common.model.constants.security.SecurityConstants;
+import com.linewell.license.platform.common.security.authen.JwtUserDetails;
+import com.linewell.license.platform.common.security.token.MidAuthenticationToken;
 import com.linewell.license.platform.common.security.token.MobileCodeAuthenticationToken;
+import com.linewell.license.platform.security.facade.dto.UserDetailDto;
+import com.linewell.license.platform.security.facade.service.AuthenCallBackFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 
 import org.springframework.stereotype.Component;
@@ -26,8 +27,9 @@ import org.springframework.util.StringUtils;
 @Component
 public class MobileCodeAuthenticationProvider  extends CustomParentProvider  implements AuthenticationProvider {
     @Autowired
-    private UserDetailsFacade userDetailsFacade;
-
+    AuthenCallBackFacade authenCallBackFacade;
+    @Autowired
+    private RedisTemplate<String, String> redisTemplate;
 
     @Override
     public Authentication authenticate(Authentication authentication)  {
@@ -36,17 +38,22 @@ public class MobileCodeAuthenticationProvider  extends CustomParentProvider  imp
         if (StringUtils.isEmpty(code)) {
             throw new BadCredentialsException("验证码不能为空");
         }
-        UserInfoDto userInfoDto = userDetailsFacade.findUserInfoByPhone(mobile);
-        if (null == userInfoDto) {
+        UserDetailDto userDetailDto = authenCallBackFacade.findUserByTelephone(mobile).getData();
+        if (null == userDetailDto) {
             throw new BadCredentialsException("用户不存在");
         }
-
-        // 手机号验证码业务还没有开发，先用4个0验证
-        if (!code.equals("0000")) {
+        String key= SecurityConstants.REDIS_CODE_MOBILE + mobile;
+        String captcha = redisTemplate.opsForValue().get(key);
+        if (StringUtils.isEmpty(captcha) || !captcha.equalsIgnoreCase(code) ) {
             throw new BadCredentialsException("验证码不正确");
         }
-
-        MobileCodeAuthenticationToken result = new MobileCodeAuthenticationToken(new UserPrincipal(userInfoDto.getUsername(),listUserGrantedAuthorities(userInfoDto.getRoleList())), code, listUserGrantedAuthorities(userInfoDto.getRoleList()));
+        if(redisTemplate.hasKey(key)){
+            redisTemplate.delete(key);
+        }
+        JwtUserDetails jwtUserDetails=new JwtUserDetails(userDetailDto);
+        MidAuthenticationToken result = new MidAuthenticationToken(jwtUserDetails, code,jwtUserDetails.getAuthorities());
+//        Set<UserRoleDto> roleList = new HashSet<>(userInfoDto.getRoles());
+//        MobileCodeAuthenticationToken result = new MobileCodeAuthenticationToken(new UserPrincipal(userInfoDto.getUserName(),listUserGrantedAuthorities(roleList)), code, listUserGrantedAuthorities(roleList));
         result.setDetails(authentication.getDetails());
         return result;
     }

@@ -3,6 +3,8 @@ package com.linewell.license.platform.common.security.config;
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 import java.util.Properties;
@@ -16,7 +18,8 @@ import java.util.Properties;
  * Time 13:53
  */
 
-@Component
+@Configuration
+
 public class KaptchaConfig {
     @Bean
     public DefaultKaptcha getDefaultKaptcha(){
@@ -29,7 +32,7 @@ public class KaptchaConfig {
         properties.setProperty("kaptcha.image.height", "40");
         properties.setProperty("kaptcha.textproducer.font.size", "30");
         properties.setProperty("kaptcha.session.key", "code");
-        properties.setProperty("kaptcha.textproducer.char.length", "4");
+        properties.setProperty("kaptcha.textproducer.char.length", "6");
         properties.setProperty("kaptcha.textproducer.font.names", "宋体,楷体,微软雅黑");
         Config config = new Config(properties);
         defaultKaptcha.setConfig(config);

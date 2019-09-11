@@ -20,9 +20,11 @@
     <file url="file://$PROJECT_DIR$/g11n" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/g11n/i10n" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/g11n/i18n" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-security-parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mysql-analyzer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/securitty" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/security-auth2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shiro-jwt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa-stack" charset="UTF-8" />

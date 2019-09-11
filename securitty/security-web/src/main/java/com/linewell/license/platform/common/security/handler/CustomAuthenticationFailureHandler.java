@@ -2,11 +2,14 @@ package com.linewell.license.platform.common.security.handler;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.linewell.license.platform.common.security.RespBean;
+import com.linewell.license.platform.common.security.exception.BadCaptchaException;
+import com.linewell.license.platform.common.security.exception.BadSmsCodeException;
 import org.springframework.security.authentication.*;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -41,9 +44,14 @@ public class CustomAuthenticationFailureHandler implements AuthenticationFailure
             respBean = RespBean.error("账户过期，请联系管理员!");
         } else if (e instanceof DisabledException) {
             respBean = RespBean.error("账户被禁用，请联系管理员!");
+        } else if (e instanceof BadSmsCodeException) {
+            respBean = RespBean.error("请输入正确短信验证码!");
+        } else if (e instanceof BadCaptchaException) {
+            respBean = RespBean.error("请输入正确图片验证码!");
         } else {
             respBean = RespBean.error("登录失败!");
         }
+
         resp.setStatus(401);
         ObjectMapper om = new ObjectMapper();
         PrintWriter out = resp.getWriter();

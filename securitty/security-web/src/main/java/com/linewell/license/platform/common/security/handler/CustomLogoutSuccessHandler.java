@@ -20,6 +20,7 @@ import java.io.PrintWriter;
  * Time 9:09
  */
 public class CustomLogoutSuccessHandler implements LogoutSuccessHandler {
+
     @Override
     public void onLogoutSuccess(HttpServletRequest req, HttpServletResponse resp, Authentication authentication) throws IOException, ServletException {
         resp.setContentType("application/json;charset=utf-8");

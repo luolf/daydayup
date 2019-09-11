@@ -5,7 +5,7 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.SpringSecurityCoreVersion;
 /**
- * 手机、短信验证码的身份令牌
+ * spring security内的手机、短信验证码的身份令牌
  *
  * @author luolifeng
  * @version 1.0.0

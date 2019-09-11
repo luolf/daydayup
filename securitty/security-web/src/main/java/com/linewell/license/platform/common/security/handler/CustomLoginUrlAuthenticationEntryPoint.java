@@ -4,6 +4,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint;
 
 
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +19,7 @@ import java.io.PrintWriter;
  * Date 2019-08-16
  * Time 16:32
  */
+
 public class CustomLoginUrlAuthenticationEntryPoint extends LoginUrlAuthenticationEntryPoint {
 
     public CustomLoginUrlAuthenticationEntryPoint(String loginFormUrl) {

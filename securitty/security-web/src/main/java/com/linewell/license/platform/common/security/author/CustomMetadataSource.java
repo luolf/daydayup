@@ -1,7 +1,7 @@
 package com.linewell.license.platform.common.security.author;
 
-import com.linewell.license.platform.common.security.facade.api.UserDetailsFacade;
 import com.linewell.license.platform.common.security.facade.dto.RolePermissionDto;
+import com.linewell.license.platform.security.facade.service.AuthenCallBackFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -26,7 +25,7 @@ import java.util.Set;
 @Component
 public class CustomMetadataSource implements FilterInvocationSecurityMetadataSource {
     @Autowired
-    UserDetailsFacade userDetailsFacade;
+    AuthenCallBackFacade authenCallBackFacade;
 
     AntPathMatcher antPathMatcher = new AntPathMatcher();
     /**
@@ -41,7 +40,7 @@ public class CustomMetadataSource implements FilterInvocationSecurityMetadataSou
         System.out.println("CustomMetadataSource--------------------------------------------------"+o);
         String requestUrl = ((FilterInvocation) o).getRequestUrl();
         System.out.println(requestUrl);
-        Set<RolePermissionDto> allPermissions = userDetailsFacade.findAllPermissions();
+        Set<RolePermissionDto> allPermissions = authenCallBackFacade.findAllPermissions().getData();
         for (RolePermissionDto permissionDto : allPermissions) {
             if (antPathMatcher.match(permissionDto.getUrl(), requestUrl)
                     &&permissionDto.getRoles().size()>0) {

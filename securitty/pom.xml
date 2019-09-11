@@ -3,19 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.study.llf</groupId>
-        <artifactId>my-security-parent</artifactId>
+        <groupId>com.linewell.license.roo</groupId>
+        <artifactId>license-roo-boot</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.linewell.license.platform.common.security</groupId>
-    <artifactId>securitty</artifactId>
+    <groupId>com.linewell.license.platform</groupId>
+    <artifactId>common-security</artifactId>
     <packaging>pom</packaging>
     <modules>
         <module>security-web</module>
         <module>security-facade</module>
         <module>security-service</module>
+        <module>deploy</module>
+        <module>deploy2</module>
     </modules>
 
     <dependencies>
