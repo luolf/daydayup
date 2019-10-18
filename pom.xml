@@ -39,6 +39,10 @@
         <module>securitty</module>
         <module>my-security-parent</module>
         <module>security-auth2</module>
+        <module>study-jvm</module>
+        <module>my-spring-admin-server</module>
+        <module>my-Javassist</module>
+        <module>springboot-dubbo-hessian-file</module>
 
     </modules>
 
