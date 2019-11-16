@@ -20,7 +20,9 @@
     <file url="file://$PROJECT_DIR$/g11n" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/g11n/i10n" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/g11n/i18n" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-Javassist" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/my-security-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-spring-admin-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mysql-analyzer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/securitty" charset="UTF-8" />
@@ -28,12 +30,19 @@
     <file url="file://$PROJECT_DIR$/shiro-jwt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa-stack" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security-auth2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security-auth2/simple/auth-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security-auth2/simple/client001" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security-auth2/simple/client002" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/main" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/my-plugin-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/test-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-elasticsearch" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-esapi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-dubbo-hessian-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/study-jvm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/study-jvm/study-jvm-oom" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tk-mybatis-Generator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/universal-capability-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/universal-capability-service/facade" charset="UTF-8" />

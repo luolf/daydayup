@@ -1,0 +1,15 @@
+server:
+  port: 8080
+logging.level.org.springframework.security: DEBUG
+spring:
+  redis:
+    host: 122.51.211.32
+    database: 0
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+license:
+  security:
+    web:
+      ignores: /oauth/**,/api/**,/pagein/**,/favicon.ico,/swagger-resources/**,/v2/**,/swagger-ui.html,/webjars/**,/**/favicon.ico,/actuator/jolokia/*,/login,/actuator/**,/**.html,/favicon.ico,/index.html,/static/**,/error,/auth/**,/css/**,/js/**,/image/**,/lib/**,/images/**,/img/**,/webapp/**,/META-INF/resources/**
