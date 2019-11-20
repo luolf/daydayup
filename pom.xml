@@ -44,6 +44,7 @@
         <module>my-Javassist</module>
         <module>springboot-dubbo-hessian-file</module>
         <module>spring-security-auth2</module>
+        <module>java-shell</module>
 
     </modules>
 
