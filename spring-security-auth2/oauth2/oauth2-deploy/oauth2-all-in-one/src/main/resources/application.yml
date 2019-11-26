@@ -1,15 +1,17 @@
 server:
   port: 8080
-logging.level.org.springframework.security: DEBUG
+logging.level.org.springframework.web: DEBUG
 spring:
   redis:
     host: 122.51.211.32
     database: 0
-security:
-  oauth2:
-    resource:
-      filter-order: 3
+    password: 133Fengvshua
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://122.51.211.32:3306/oauth2test?useUnicode=yes&characterEncoding=UTF-8
+    username: root
+    password: newland10000#
 license:
   security:
     web:
-      ignores: /oauth/**,/api/**,/pagein/**,/favicon.ico,/swagger-resources/**,/v2/**,/swagger-ui.html,/webjars/**,/**/favicon.ico,/actuator/jolokia/*,/login,/actuator/**,/**.html,/favicon.ico,/index.html,/static/**,/error,/auth/**,/css/**,/js/**,/image/**,/lib/**,/images/**,/img/**,/webapp/**,/META-INF/resources/**
+      ignores: /oauth/**,/login/**,/logout/**

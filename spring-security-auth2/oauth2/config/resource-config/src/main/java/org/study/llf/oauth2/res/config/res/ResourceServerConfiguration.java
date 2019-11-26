@@ -1,6 +1,7 @@
 package org.study.llf.oauth2.res.config.res;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -17,6 +18,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
  */
 @Configuration
 @EnableResourceServer
+@Order(6)
 public   class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
     private static final String DEMO_RESOURCE_ID = "order";
     @Override
@@ -38,6 +40,7 @@ public   class ResourceServerConfiguration extends ResourceServerConfigurerAdapt
                 .and()
                 .authorizeRequests()
 //                    .antMatchers("/product/**").access("#oauth2.hasScope('select') and hasRole('ROLE_USER')")
+                .antMatchers("/product/**").authenticated()
                 .antMatchers("/order/**").authenticated();//配置order访问控制，必须认证过后才可以访问
         // @formatter:on
     }

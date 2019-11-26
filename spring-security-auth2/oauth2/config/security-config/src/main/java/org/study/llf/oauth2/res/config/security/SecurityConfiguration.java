@@ -3,6 +3,7 @@ package org.study.llf.oauth2.res.config.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -23,6 +24,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
  */
 @Configuration
 @EnableWebSecurity
+@Order(2)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
@@ -47,18 +49,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // @formatter:off
+        http.csrf().disable();
         http
-                .requestMatchers().anyRequest()
+                .requestMatchers().antMatchers("/oauth/**","/login/**","/logout/**")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/oauth/*").permitAll();
-        // @formatter:on
+                .antMatchers("/oauth/**").authenticated()
+                .and()
+                .formLogin().permitAll(); //新增login form支持用户登录及授权
     }
 
     @Bean
     @Override
-    public AuthenticationManager authenticationManager() throws Exception {
+    public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
 }
