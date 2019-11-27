@@ -1,0 +1,17 @@
+server:
+  port: 9005
+logging.level.org.springframework.web: DEBUG
+spring:
+  redis:
+    host: 122.51.211.32
+    database: 0
+    password: 133Fengvshua
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://122.51.211.32:3306/oauth2test?useUnicode=yes&characterEncoding=UTF-8
+    username: root
+    password: newland10000#
+license:
+  security:
+    web:
+      ignores: /oauth/**,/login/**,/logout/**

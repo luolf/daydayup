@@ -42,6 +42,7 @@
         <module name="deploy" />
         <module name="security-config" />
         <module name="springb-elasticsearch" />
+        <module name="java-shell" />
         <module name="hi-sofa-plugin" />
         <module name="oauth2-authorization" />
         <module name="hello-plugin" />
@@ -117,6 +118,7 @@
       <module name="i10n" options="-parameters" />
       <module name="i18n" options="-parameters" />
       <module name="instrumentation" options="-parameters" />
+      <module name="java-shell" options="-parameters" />
       <module name="main" options="-parameters" />
       <module name="my-Javassist" options="" />
       <module name="my-security-parent" options="" />
