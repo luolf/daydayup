@@ -10,6 +10,8 @@
         <module name="springb-esapi" />
         <module name="my-oatuth2-parent" />
         <module name="say-hi" />
+        <module name="mysql-analyzer" />
+        <module name="test" />
         <module name="springbelasticsearch" />
         <module name="securityauth2deploy" />
         <module name="tkmybatisGenerator" />
@@ -19,12 +21,13 @@
         <module name="auth-server" />
         <module name="client002" />
         <module name="client001" />
+        <module name="dubbo-test" />
         <module name="oauth2-all-in-one" />
         <module name="cglib" />
         <module name="customloader" />
         <module name="common-facade" />
         <module name="demo-zipkin" />
-        <module name="mysql-analyzer" />
+        <module name="spring-boot-dynamic-data-source" />
         <module name="custom-loader" />
         <module name="kaos" />
         <module name="securityauth2facade" />
@@ -38,7 +41,7 @@
         <module name="shirojwt" />
         <module name="dubbo-api" />
         <module name="securitty-web" />
-        <module name="dubbo-test" />
+        <module name="biz" />
         <module name="deploy" />
         <module name="security-config" />
         <module name="springb-elasticsearch" />
@@ -50,11 +53,12 @@
         <module name="service" />
         <module name="security-facade" />
         <module name="securitywebcontroller" />
-        <module name="security-service" />
+        <module name="asm" />
         <module name="resource-exmple-01" />
         <module name="web" />
         <module name="tk-mybatis-Generator" />
         <module name="sofaboot-first" />
+        <module name="demo-service-b" />
         <module name="facade" />
         <module name="test-jar" />
         <module name="code-translate" />
@@ -73,10 +77,11 @@
         <module name="securitty-service" />
         <module name="main" />
         <module name="demo-service-c" />
-        <module name="demo-service-b" />
+        <module name="security-service" />
         <module name="demo-service-a" />
         <module name="resource-config" />
         <module name="first" />
+        <module name="javassist" />
         <module name="shiro-jwt" />
         <module name="oauth2-resource" />
       </profile>
@@ -99,7 +104,9 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="asm" options="-parameters" />
       <module name="auth-server" options="" />
+      <module name="biz" options="-parameters" />
       <module name="cglib" options="-parameters" />
       <module name="client001" options="" />
       <module name="client002" options="" />
@@ -119,6 +126,7 @@
       <module name="i18n" options="-parameters" />
       <module name="instrumentation" options="-parameters" />
       <module name="java-shell" options="-parameters" />
+      <module name="javassist" options="-parameters" />
       <module name="main" options="-parameters" />
       <module name="my-Javassist" options="" />
       <module name="my-security-parent" options="" />
@@ -132,12 +140,14 @@
       <module name="sofaboot" options="-parameters" />
       <module name="sofaboot-first" options="" />
       <module name="sofastack" options="-parameters" />
+      <module name="spring-boot-dynamic-data-source" options="-parameters" />
       <module name="spring-security-auth2" options="-parameters" />
       <module name="springb-elasticsearch" options="-parameters" />
       <module name="springb-esapi" options="-parameters" />
       <module name="springboot-dubbo-hessian-file" options="-parameters" />
       <module name="study-jvm" options="-parameters" />
       <module name="study-jvm-oom" options="-parameters" />
+      <module name="test" options="-parameters" />
       <module name="test-jar" options="-parameters" />
       <module name="tkmybatisGenerator" options="-parameters" />
     </option>

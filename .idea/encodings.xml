@@ -7,6 +7,11 @@
     <file url="file://$PROJECT_DIR$/aop/custom-loader" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop/dynamic" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop/instrumentation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/byte-code" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/byte-code/asm" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/byte-code/biz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/byte-code/javassist" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/byte-code/test" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/code-translate" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/dubbo-common" charset="UTF-8" />
@@ -48,5 +53,6 @@
     <file url="file://$PROJECT_DIR$/universal-capability-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/universal-capability-service/facade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/universal-capability-service/service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../study/spring-boot-dynamic-data-source-master" charset="UTF-8" />
   </component>
 </project>

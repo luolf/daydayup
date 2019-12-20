@@ -45,6 +45,7 @@
         <module>springboot-dubbo-hessian-file</module>
         <module>spring-security-auth2</module>
         <module>java-shell</module>
+        <module>byte-code</module>
 
     </modules>
 

@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.Resource;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
@@ -39,6 +38,7 @@ import java.util.stream.Collectors;
 @Configuration
 @EnableResourceServer
 @Order(6)
+
 public   class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
     private static final String DEMO_RESOURCE_ID = "llorder";
     @Autowired
@@ -85,14 +85,14 @@ public   class ResourceServerConfiguration extends ResourceServerConfigurerAdapt
      * 与授权服务器使用共同的密钥进行解析
      * @return
      */
-    @Bean
-    @ConditionalOnMissingBean(name={"jwtAccessTokenConverter"})
-    public JwtAccessTokenConverter jwtAccessTokenConverter() {
-        System.out.println("@ConditionalOnMissingBean(name={\"jwtAccessTokenConverter\"})");
-        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setSigningKey("123");
-        return converter;
-    }
+//    @Bean
+//    @ConditionalOnMissingBean(name={"jwtAccessTokenConverter"})
+//    public JwtAccessTokenConverter jwtAccessTokenConverter() {
+//        System.out.println("@ConditionalOnMissingBean(name={\"jwtAccessTokenConverter\"})");
+//        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+//        converter.setSigningKey("123");
+//        return converter;
+//    }
 
 
     /**
@@ -102,42 +102,41 @@ public   class ResourceServerConfiguration extends ResourceServerConfigurerAdapt
      * @return
      */
 
-//    @Bean
-//    public JwtAccessTokenConverter jwtAccessTokenConverter() {
-//        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-//        //设置用于解码的非对称加密的公钥
-//        converter.setVerifierKey(getPubKey());
-//        return converter;
-//    }
-//    /**
-//     * 非对称加密
-//     * @return
-//     */
-//    private String getPubKey() {
-//        Resource resource = new ClassPathResource("pubkey.txt");
-//        try (BufferedReader br = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {
-//            System.out.println("本地公钥");
-//            return br.lines().collect(Collectors.joining("\n"));
-//        } catch (IOException ioe) {
-//            return getKeyFromAuthorizationServer();
-//        }
-//    }
-//    /**
-//     * 非对称加密
-//     * @return
-//     */
-//    private String getKeyFromAuthorizationServer() {
-//        ObjectMapper objectMapper = new ObjectMapper();
-//        String pubKey = new RestTemplate().getForObject(resourceServerProperties.getJwt().getKeyUri(), String.class);
-//        try {
-//            Map map = objectMapper.readValue(pubKey, Map.class);
-//            System.out.println("联网公钥");
-//            return map.get("value").toString();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
+    @Bean
+    public JwtAccessTokenConverter jwtAccessTokenConverter() {
+        JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
+        //设置用于解码的非对称加密的公钥
+        converter.setVerifierKey(getPubKey());
+        return converter;
+    }
+    /**
+     * 非对称加密,本地公钥 pubkey.txt
+     * @return
+     */
+    private String getPubKey() {
+        org.springframework.core.io.Resource resource = new ClassPathResource("pubkey.txt");
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(resource.getInputStream()))) {
+            return br.lines().collect(Collectors.joining("\n"));
+        } catch (IOException ioe) {
+            return getKeyFromAuthorizationServer();
+        }
+    }
+    /**
+     * 非对称加密
+     * @return
+     */
+    private String getKeyFromAuthorizationServer() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String pubKey = new RestTemplate().getForObject(resourceServerProperties.getJwt().getKeyUri(), String.class);
+        try {
+            Map map = objectMapper.readValue(pubKey, Map.class);
+            System.out.println("联网公钥");
+            return map.get("value").toString();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 
     /**
@@ -146,23 +145,24 @@ public   class ResourceServerConfiguration extends ResourceServerConfigurerAdapt
      * 并且使用 DefaultAccessTokenConverter 来实现令牌数据的存储
      * @return OAuth2ClientProperties
      */
-    @Autowired
-    private OAuth2ClientProperties oAuth2ClientProperties;
-
-    @Autowired
-    private AuthorizationServerProperties authorizationServerProperties;
-    @Bean
-    public ResourceServerTokenServices tokenServices() {
-        RemoteTokenServices remoteTokenServices = new RemoteTokenServices();
-        remoteTokenServices.setCheckTokenEndpointUrl(authorizationServerProperties.getCheckTokenAccess());
-        remoteTokenServices.setClientId(oAuth2ClientProperties.getClientId());
-        remoteTokenServices.setClientSecret(oAuth2ClientProperties.getClientSecret());
-        remoteTokenServices.setAccessTokenConverter(accessTokenConverter());
-        return remoteTokenServices;
-    }
-    @Bean
-    public AccessTokenConverter accessTokenConverter() {
-        return new DefaultAccessTokenConverter();
-    }
+//    @Autowired
+//    private OAuth2ClientProperties oAuth2ClientProperties;
+//
+//    @Resource(name="authServerProp")
+////    @Autowired
+//    private AuthorizationServerProperties authorizationServerProperties;
+//    @Bean
+//    public ResourceServerTokenServices tokenServices() {
+//        RemoteTokenServices remoteTokenServices = new RemoteTokenServices();
+//        remoteTokenServices.setCheckTokenEndpointUrl(authorizationServerProperties.getCheckTokenAccess());
+//        remoteTokenServices.setClientId(oAuth2ClientProperties.getClientId());
+//        remoteTokenServices.setClientSecret(oAuth2ClientProperties.getClientSecret());
+//        remoteTokenServices.setAccessTokenConverter(accessTokenConverter());
+//        return remoteTokenServices;
+//    }
+//    @Bean
+//    public AccessTokenConverter accessTokenConverter() {
+//        return new DefaultAccessTokenConverter();
+//    }
 
 }

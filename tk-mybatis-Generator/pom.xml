@@ -105,7 +105,8 @@
                     <overwrite>true</overwrite>
                     <!-- 自动生成的配置 -->
                     <configurationFile>
-                        src/main/resources/mybatis-generator.xml</configurationFile>
+                        src/main/resources/mybatis-generator-template.xml</configurationFile>
+
                 </configuration>
             </plugin>
 
