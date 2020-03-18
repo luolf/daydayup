@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<head>
+    <title>Title</title>
+<!--    <link rel="stylesheet" href="js/ntko.min.css">-->
+<!--    <script language="JavaScript" type="text/javascript" src="js/ntkofunction.min.js"></script>-->
+    <script language="javascript">
+        var ntkoobj=null;
+        var hideBool=false;
+        function objinit2(docUrl) {
+            // ntkoobj = document.all("TANGER_OCX");
+            ntkoobj = document.getElementById("TANGER_OCX")
+            if(null==ntkoobj){
+                alert("ActiveX未正确加载！");
+                return;
+            }
+            // ntkoobj.AddDomainToTrustSite(document.domain);
+            ntkoobj.SetAutoCheckSignKey("ntko");
+            if((null==docUrl) || (0==docUrl.length)){
+                console.log("ntkoobj.CreateNew(\"Word.Document\");");
+                ntkoobj.CreateNew("Word.Document");
+            }else{
+                console.log("ntkoobj.BeginOpenFromURL(docUrl);",docUrl);
+                ntkoobj.BeginOpenFromURL(docUrl);
+            }
+        }
+        function tanger_ocx_enableReviewBar() {
+            hideBool=!hideBool;
+            boolvalue=hideBool;
+            console.log("boolvalue=",boolvalue);
+            ntkoobj.ActiveDocument.CommandBars("Reviewing").Enabled=boolvalue;
+            ntkoobj.ActiveDocument.CommandBars("Track Changes").Enabled=boolvalue;
+            ntkoobj.IsShowToolMenu=boolvalue;//关闭或打开工具菜单
+            // ntkoobj.Menubar=boolvalue;
+            ntkoobj.showCommandBar(1,boolvalue);
+        }
+    </script>
+    <script language="JavaScript" for="TANGER_OCX" EVENT="OnDocumentOpened(str,obj)">
+        //此时文档已经打开，可以执行其它的操作。
+    </script>
+</head>
+<body onload="objinit2('default.doc')">
+
+<!--<ul class="nav nav-tabs" id="myTab">-->
+<!--    <li><a href="#biaodian" data-toggle="tab">表单</a></li>-->
+<!--    <li class="active"><a href="#word" data-toggle="tab">word</a></li>-->
+<!--    <li><a href="#excel" data-toggle="tab">excel</a></li>-->
+<!--    <li><a href="#ppt" data-toggle="tab">ppt</a></li>-->
+<!--    <li><a href="#sign" data-toggle="tab">电子签章</a></li>-->
+<!--    <li><a href="#zujian" data-toggle="tab">组件</a></li>-->
+<!--    <li><a href="#demodescription" data-toggle="tab">示例说明</a></li>-->
+<!--    <div id="progress" class="progress progress-striped active">-->
+<!--        <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:100%"></div>-->
+<!--    </div>-->
+<!--</ul>-->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button onclick="tanger_ocx_enableReviewBar()">关闭或打开工具菜单</button>
+                <h4 class="modal-title" id="myModalLabel">信息窗口:</h4>
+                <span id="msginfo"></span>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script src="ntkoGenObj.js">
+</script>
+
+<!--&lt;!&ndash; jQuery文件。务必在bootstrap.min.js 之前引入&ndash;&gt;-->
+<!--<script src="js/jquery-1.11.1.min.js"></script>-->
+<!--<script src="js/jquery-ui-1.10.4.min.js"></script>-->
+<!--&lt;!&ndash; 最新的 Bootstrap 核心 JavaScript 文件  &ndash;&gt;-->
+<!--<script src="js/bootstrap.min.js"></script>-->
+</body>
+
+</html>

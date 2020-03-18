@@ -1,10 +1,8 @@
 package org.llf.test;
-import com.sun.tools.attach.AgentInitializationException;
-import com.sun.tools.attach.AgentLoadException;
-import com.sun.tools.attach.AttachNotSupportedException;
-import com.sun.tools.attach.VirtualMachine;
+import com.sun.tools.attach.*;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Description 类描述
@@ -18,8 +16,20 @@ import java.io.IOException;
 
 public class AttacherMain {
     public static void main(String[] args) throws IOException, AgentLoadException, AgentInitializationException, AttachNotSupportedException {
+        String jar="F:\\code\\linewell\\daydayup\\byte-code\\javassist\\target\\javassist-1.0-SNAPSHOT.jar";
         // 传入目标 JVM pid
-        VirtualMachine vm = VirtualMachine.attach("6500");
-        vm.loadAgent("F:\\code\\linewell\\daydayup\\byte-code\\javassist\\javassist-1.0-SNAPSHOT.jar");
+//        VirtualMachine virtualMachine = VirtualMachine.attach("660");
+//        virtualMachine.loadAgent(jar);
+//        virtualMachine.detach();
+        List<VirtualMachineDescriptor> list = VirtualMachine.list();
+        for (VirtualMachineDescriptor vmd : list) {
+            if (vmd.displayName().endsWith("MyBizApp")) {
+                VirtualMachine virtualMachine = VirtualMachine.attach(vmd.id());
+                virtualMachine.loadAgent(jar, "cxs");
+                virtualMachine.detach();
+                System.out.println("ok");
+            }
+        }
+
     }
 }

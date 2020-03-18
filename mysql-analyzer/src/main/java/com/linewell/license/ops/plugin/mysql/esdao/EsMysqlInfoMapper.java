@@ -1,5 +1,6 @@
 package com.linewell.license.ops.plugin.mysql.esdao;
 
+import com.linewell.license.ops.common.es.dao.EsBaseMapper;
 import com.linewell.license.ops.plugin.mysql.pojo.EsMysqlAllInfo;
 
 /**

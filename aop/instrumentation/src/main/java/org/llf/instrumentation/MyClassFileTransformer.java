@@ -21,6 +21,7 @@ public class MyClassFileTransformer  implements ClassFileTransformer {
         //注册我自己的字节码转换器
         ins.addTransformer(new MyClassFileTransformer());
     }
+
     /**
      * 字节码加载到虚拟机前会进入这个方法
      */
@@ -53,3 +54,4 @@ public class MyClassFileTransformer  implements ClassFileTransformer {
         }
         return null;
     }
+}

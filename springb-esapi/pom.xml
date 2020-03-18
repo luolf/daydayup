@@ -16,26 +16,29 @@
             <artifactId>fastjson</artifactId>
             <version>1.1.23</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional> <!--这个需要为 true 热部署才有效 -->
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-devtools</artifactId>-->
+<!--            <optional>true</optional> &lt;!&ndash;这个需要为 true 热部署才有效 &ndash;&gt;-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <!--<dependency>-->
             <!--<groupId>io.searchbox</groupId>-->
             <!--<artifactId>jest</artifactId>-->
             <!--<version>6.3.0</version>-->
         <!--</dependency>-->
-        <dependency>
-            <groupId>org.elasticsearch</groupId>
-            <artifactId>elasticsearch</artifactId>
-            <version>${elasticsearch.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.elasticsearch</groupId>-->
+<!--            <artifactId>elasticsearch</artifactId>-->
+<!--            <version>${elasticsearch.version}</version>-->
+<!--        </dependency>-->
         <!--<dependency>-->
             <!--<groupId>org.elasticsearch.client</groupId>-->
             <!--<artifactId>transport</artifactId>-->
@@ -51,11 +54,11 @@
             <!--<artifactId>transport-netty4-client</artifactId>-->
             <!--<version>${elasticsearch.version}</version>-->
         <!--</dependency>-->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-elasticsearch</artifactId>
-            <version>${spring.data.elasticsearch.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.data</groupId>-->
+<!--            <artifactId>spring-data-elasticsearch</artifactId>-->
+<!--            <version>${spring.data.elasticsearch.version}</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-elasticsearch -->
 
         <!--<dependency>-->

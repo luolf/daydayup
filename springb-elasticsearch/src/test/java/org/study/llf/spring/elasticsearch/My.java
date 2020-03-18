@@ -50,8 +50,7 @@ public class My {
     @Test
     public void test2(){
        Object obj=  new Object();
-
-        JSONObject j2=JSONObject.toJSONString(obj);
+        String j2=JSON.toJSONString(obj);
         System.out.println(j2);
     }
 }

@@ -17,6 +17,7 @@
         <module>javassist</module>
         <module>biz</module>
         <module>test</module>
+        <module>btrace</module>
     </modules>
 
 
