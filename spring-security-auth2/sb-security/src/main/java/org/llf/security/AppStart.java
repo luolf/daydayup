@@ -22,8 +22,7 @@ public class AppStart {
         System.out.println(System.getProperty("sun.boot.class.path"));
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`````");
         System.out.println(System.getProperty("java.ext.dirs"));
-        Thread.currentThread();
 
-        URLClassLoader ClassLoader;
+
     }
 }

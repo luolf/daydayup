@@ -46,6 +46,8 @@
         <module>spring-security-auth2</module>
         <module>java-shell</module>
         <module>byte-code</module>
+        <module>hello-world</module>
+        <module>poi-tl</module>
 
     </modules>
 
