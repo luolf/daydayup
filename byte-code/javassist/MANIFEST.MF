@@ -1,0 +1,6 @@
+Created-By: luolifeng
+Manifest-Version: 1.0
+Can-Redefine-Classes: true
+Agent-Class: org.study.llf.instrument.TestAgent
+Can-Retransform-Classes: true
+

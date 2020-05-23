@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:sofa="http://schema.alipay.com/sofa/schema/slite"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://schema.alipay.com/sofa/schema/slite   http://schema.alipay.com/sofa/slite.xsd"
+       default-autowire="byName">
+
+    <!-- This filter is in the aim of ensuring corss-orgin request. -->
+    <bean id="commonContainerResponseFilter" class="org.llf.sofaboot.demo.web.endpoint.filter.CommonContainerResponseFilter">
+        <property name="allowedOrigins">
+            <set>
+                <!-- In production environment, `localhost` should be replaced with the domain of the service. -->
+                <value>http://localhost:8080</value>
+                <value>http://localhost:8341</value>
+                <!-- This line ensures the usage of postman plugin in chrome -->
+                <value>chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop</value>
+            </set>
+        </property>
+    </bean>
+
+    <!-- SOFA REST resource to deal with REST request. -->
+    <bean id="sampleRestFacadeRest" class="org.llf.sofaboot.demo.web.endpoint.impl.SampleRestFacadeRestImpl"/>
+
+    <bean id="faviconRestFacadeRest" class="org.llf.sofaboot.demo.web.endpoint.impl.FaviconRestFacadeRestImpl"/>
+
+
+</beans>
