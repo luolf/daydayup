@@ -39,7 +39,7 @@
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
         <!--生成SQLMAP文件 -->
-        <sqlMapGenerator targetPackage="alarm"
+        <sqlMapGenerator targetPackage="processor"
                          targetProject="F:\code\linewell\daydayup\tk-mybatis-Generator\src\main\resources\mapper\">
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
@@ -52,7 +52,7 @@
 
         <!--对应数据库表 mysql可以加入主键自增 字段命名 忽略某字段等 -->
 
-        <table  tableName="gen_file" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
+        <table  tableName="gen_task_file" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
         <table  tableName="gen_task_info" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
         <table  tableName="gen_task_error" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />
 

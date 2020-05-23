@@ -12,7 +12,7 @@ import java.util.List;
  * Time 14:05
  */
 public class ManyObject {
-    Integer name;
+    volatile Integer name;
     public ManyObject(Integer name){
         this.name=name;
     }
@@ -31,12 +31,12 @@ public class ManyObject {
      * @throws InterruptedException
      */
     public static void main(String[] args) throws InterruptedException {
-        ManyObject manyObject=new ManyObject(1);
+         ManyObject  manyObject=new ManyObject(1);
 //        Thread.sleep(20000);
         long start=System.currentTimeMillis();
         for (int i = 1; i < 300000000; i++) {
             if(i%1000==0){
-                Thread.sleep(1000);
+                Thread.sleep(3000);
             }
             TestObject t=  manyObject.get();
         }

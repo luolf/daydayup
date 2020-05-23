@@ -3,18 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>sofa-biz-test</artifactId>
-        <groupId>org.study.llf.sofa</groupId>
+        <artifactId>antdesignpro-demo</artifactId>
+        <groupId>org.study.llf</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.study.llf.sofa</groupId>
-    <artifactId>my-sofa-plugin</artifactId>
+    <groupId>org.study.llf</groupId>
+    <artifactId>user-mgr</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>hello-plugin</module>
-        <module>hi-sofa-plugin</module>
+        <module>user--antdesign-ui</module>
+        <module>user-facade</module>
+        <module>user-service</module>
+        <module>user-web</module>
     </modules>
 
 

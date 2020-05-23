@@ -48,6 +48,7 @@
         <module>byte-code</module>
         <module>hello-world</module>
         <module>poi-tl</module>
+        <module>antdesignpro-demo</module>
 
     </modules>
 
