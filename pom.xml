@@ -50,6 +50,8 @@
         <module>poi-tl</module>
         <module>antdesignpro-demo</module>
         <module>javasource-1.8</module>
+        <module>hbase</module>
+        <module>dbase</module>
 
     </modules>
 

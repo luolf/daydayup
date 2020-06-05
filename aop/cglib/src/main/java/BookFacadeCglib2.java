@@ -33,13 +33,17 @@ public class BookFacadeCglib2 implements MethodInterceptor {
     //回调方法
     @Override
     public Object intercept(Object obj, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+
         if (method.getName().equals("addBook")) {
             System.out.println(obj.hashCode()+"这个估计不被执行"+this.cnt);
         }
         long s=System.currentTimeMillis();
         methodProxy.invokeSuper(obj, args);
         String msg=method.getName()+":"+method.getDeclaringClass();
-        System.out.println("耗时:"+(System.currentTimeMillis()-s)+":"+msg);
+
+//        if(!method.getName().equals("toString")) {
+//            System.out.println(obj.toString() + "耗时:" + (System.currentTimeMillis() - s) + ":" + msg);
+//        }
         return null;
     }
     public  void  setCnt(int cnt){

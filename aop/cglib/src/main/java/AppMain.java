@@ -58,7 +58,7 @@ public class AppMain {
     public static void savePoxyClass(Object c){
         byte[] bytes = ProxyGenerator.generateProxyClass("$Proxy", new Class[]{c.getClass()});
         try(
-                FileOutputStream fos =new FileOutputStream(new File("Proxy.class"))
+                FileOutputStream fos =new FileOutputStream(new File("BookFacadeImplProxy.class"))
         ){
             fos.write(bytes);
             fos.flush();
