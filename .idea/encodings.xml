@@ -2,38 +2,63 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DingDing/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop/cglib" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop/cglib/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop/custom-loader" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop/custom-loader/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop/dynamic" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop/dynamic/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/aop/instrumentation" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/aop/instrumentation/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/byte-code" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/byte-code/asm" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/byte-code/biz" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/byte-code/biz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/byte-code/btrace/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/byte-code/javassist" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/byte-code/javassist/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/byte-code/test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/byte-code/test/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/code-translate" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/code-translate/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/common/dubbo-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/temp-test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dbase/jdbc-mysql/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-trancer" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-trancer/demo-service-a" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-trancer/demo-service-b" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-trancer/demo-service-c" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-trancer/dubbo-api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/demo-zipkin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/demo-zipkin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/dubbo-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dubbo-test/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/g11n" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/g11n/i10n" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/g11n/i18n" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/g11n/i18n/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hbase/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/hello-world/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java-shell" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java-shell/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lucenne/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lucenne/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/my-Javassist" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/my-security-parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/my-spring-admin-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/my-spring-admin-server/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mysql-analyzer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mysql-analyzer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poi-tl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poi-tl/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/securitty" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/security-auth2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/shiro-jwt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/shiro-jwt/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/sofa-stack" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-security-auth2" charset="UTF-8" />
@@ -42,17 +67,23 @@
     <file url="file://$PROJECT_DIR$/spring-security-auth2/simple/client002" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/main" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/main/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/my-plugin-jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/my-plugin-jar/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/test-jar" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-dynamic-load-jar/test-jar/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-elasticsearch" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-elasticsearch/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springb-esapi" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springb-esapi/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-dubbo-hessian-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/springboot-dubbo-hessian-file/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/study-jvm" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/study-jvm/study-jvm-oom" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/study-jvm/study-jvm-oom/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/tk-mybatis-Generator" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/universal-capability-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/universal-capability-service/facade" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/universal-capability-service/service" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/../../study/spring-boot-dynamic-data-source-master" charset="UTF-8" />
   </component>
 </project>

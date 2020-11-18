@@ -4,9 +4,12 @@ import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -14,6 +17,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Description 类描述
@@ -26,10 +30,53 @@ import java.util.HashMap;
 @SpringBootApplication
 @RestController
 public class MyApp {
+
+    RestTemplate restTemplate=new RestTemplate();
+    public void tt(){
+        Map<String,Object> body = new HashMap<>();
+        body.put("lang","english");
+        body.put("filterstopwords","1");
+        body.put("filtertags","title");
+        Map<String,Object> content = new HashMap<>();
+        content.put("0","ge ge hh");
+        content.put("1","we just heard ~join us~");
+        body.put("content",content);
+        ResponseEntity<Rop> responseEntity = restTemplate.postForEntity("http://innermlapi.xiguaji.com/getsegbulkstrsforeign", body, Rop.class);
+        System.out.println(responseEntity.getBody());
+    }
+
+    public class Rop{
+        String message;
+        int code;
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+
+        public int getCode() {
+            return code;
+        }
+
+        public void setCode(int code) {
+            this.code = code;
+        }
+    }
     public MyApp(){
-        System.out.println("myid="+this);
+
     }
     public static void main(String[] args) {
+//        MyApp a=new MyApp();
+        String pp="{\"business_type\":6,\"shop_link\":{\"keyword\":\"Mental Health Movement Shirt\",\"url\":\"https://teespring.com/stores/mental-health-movement-2\"},\"anchor_info\":{\"keyword\":\"Mental Health Movement Shirt\",\"url\":\"https://teespring.com/stores/mental-health-movement-2\",\"extra\":\"{\\\"product_type\\\":\\\"teespring\\\"}\"}}";
+        if(!StringUtils.isEmpty(pp)  && !pp.equals("NONE")){
+            System.out.println("true");
+        }else{
+            System.out.println("false");
+        }
+
         SpringApplication.run(MyApp.class, args);
     }
     @Autowired

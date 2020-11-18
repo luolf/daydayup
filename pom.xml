@@ -12,7 +12,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
+        <java.version>1.11</java.version>
 
         <elasticsearch.version>6.4.1</elasticsearch.version>
         <spring.data.elasticsearch.version>3.1.0.RELEASE</spring.data.elasticsearch.version>
@@ -52,6 +52,8 @@
         <module>javasource-1.8</module>
         <module>hbase</module>
         <module>dbase</module>
+        <module>lucenne</module>
+        <module>DingDing</module>
 
     </modules>
 

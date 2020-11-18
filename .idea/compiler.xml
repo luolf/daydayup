@@ -10,80 +10,109 @@
         <module name="springb-esapi" />
         <module name="my-oatuth2-parent" />
         <module name="say-hi" />
-        <module name="mysql-analyzer" />
-        <module name="test" />
+        <module name="securitty-web" />
         <module name="springbelasticsearch" />
         <module name="securityauth2deploy" />
-        <module name="tkmybatisGenerator" />
+        <module name="my-spring-admin-server" />
+        <module name="poi-tl" />
+        <module name="hbase" />
         <module name="springboot-dubbo-hessian-file" />
         <module name="my-plugin-jar" />
-        <module name="i18n" />
+        <module name="say-hello" />
         <module name="auth-server" />
         <module name="client002" />
         <module name="client001" />
         <module name="dubbo-test" />
         <module name="oauth2-all-in-one" />
         <module name="cglib" />
+        <module name="hello-world" />
+        <module name="temp-test" />
+        <module name="spring-boot-dubbo-hessian-file" />
         <module name="customloader" />
         <module name="common-facade" />
-        <module name="demo-zipkin" />
+        <module name="tkmybatisGenerator" />
         <module name="spring-boot-dynamic-data-source" />
         <module name="custom-loader" />
         <module name="kaos" />
+        <module name="common-security-web" />
         <module name="securityauth2facade" />
         <module name="dubbocommon" />
-        <module name="dubbo-common" />
-        <module name="say-hello" />
+        <module name="jdbc-mysql" />
+        <module name="resource-config" />
+        <module name="security-service" />
         <module name="study-jvm-oom" />
-        <module name="my-spring-admin-server" />
+        <module name="common-security-facade" />
+        <module name="order-web-controller" />
         <module name="facade (1) (org.study.llf.sofa)" />
         <module name="mypluginjar" />
         <module name="shirojwt" />
         <module name="dubbo-api" />
-        <module name="securitty-web" />
+        <module name="security-auth2-deploy" />
         <module name="biz" />
         <module name="deploy" />
         <module name="security-config" />
         <module name="springb-elasticsearch" />
         <module name="java-shell" />
         <module name="hi-sofa-plugin" />
+        <module name="user-facade" />
+        <module name="btrace" />
         <module name="oauth2-authorization" />
         <module name="hello-plugin" />
         <module name="jvmclassloadtest" />
+        <module name="demo-zipkin" />
         <module name="service" />
         <module name="security-facade" />
         <module name="securitywebcontroller" />
         <module name="asm" />
+        <module name="product-mgr" />
         <module name="resource-exmple-01" />
         <module name="web" />
-        <module name="tk-mybatis-Generator" />
+        <module name="lucenne" />
+        <module name="javasource-1.8" />
         <module name="sofaboot-first" />
-        <module name="demo-service-b" />
+        <module name="deploy (2) (com.linewell.license.platform.common.security)" />
         <module name="facade" />
         <module name="test-jar" />
-        <module name="code-translate" />
+        <module name="javassist" />
+        <module name="user-service" />
+        <module name="oauth2-resource" />
+        <module name="dubbo-common" />
+        <module name="security-web-controller" />
+        <module name="sb-security" />
         <module name="jvm-classload-test" />
         <module name="mysqlanalyzer" />
         <module name="codetranslate" />
-        <module name="dubbotest" />
+        <module name="code-translate" />
         <module name="instrumentation" />
+        <module name="common-security-service" />
+        <module name="myark-test" />
         <module name="provider" />
         <module name="i10n" />
         <module name="my-Javassist" />
         <module name="authorization-config" />
+        <module name="tk-mybatis-Generator" />
         <module name="securityauth2service" />
         <module name="dynamic" />
+        <module name="user-web-controller" />
+        <module name="dubbotest" />
         <module name="securitty-facade" />
+        <module name="sofaboot-health" />
         <module name="securitty-service" />
         <module name="main" />
         <module name="demo-service-c" />
-        <module name="security-service" />
+        <module name="demo-service-b" />
         <module name="demo-service-a" />
-        <module name="resource-config" />
+        <module name="DingDing" />
+        <module name="security-auth2-facade" />
         <module name="first" />
-        <module name="javassist" />
+        <module name="order-facade" />
+        <module name="mysql-analyzer" />
+        <module name="i18n" />
+        <module name="deploy (1) (org.study.llf)" />
+        <module name="order-service" />
         <module name="shiro-jwt" />
-        <module name="oauth2-resource" />
+        <module name="test" />
+        <module name="security-auth2-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -104,13 +133,17 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DingDing" options="-parameters" />
       <module name="asm" options="-parameters" />
       <module name="auth-server" options="" />
       <module name="biz" options="-parameters" />
+      <module name="btrace" options="-parameters" />
       <module name="cglib" options="-parameters" />
       <module name="client001" options="" />
       <module name="client002" options="" />
+      <module name="code-translate" options="-parameters" />
       <module name="codetranslate" options="-parameters" />
+      <module name="custom-loader" options="-parameters" />
       <module name="customloader" options="-parameters" />
       <module name="demo-service-a" options="" />
       <module name="demo-service-b" options="" />
@@ -119,19 +152,27 @@
       <module name="demotrancer" options="" />
       <module name="dubbo-api" options="" />
       <module name="dubbo-common" options="-parameters" />
+      <module name="dubbo-test" options="-parameters" />
       <module name="dubbotest" options="-parameters" />
       <module name="dynamic" options="-parameters" />
       <module name="first" options="-parameters" />
+      <module name="hbase" options="-parameters" />
+      <module name="hello-world" options="-parameters" />
       <module name="i10n" options="-parameters" />
       <module name="i18n" options="-parameters" />
       <module name="instrumentation" options="-parameters" />
       <module name="java-shell" options="-parameters" />
+      <module name="javasource-1.8" options="-parameters" />
       <module name="javassist" options="-parameters" />
+      <module name="jdbc-mysql" options="-parameters" />
+      <module name="lucenne" options="-parameters" />
       <module name="main" options="-parameters" />
       <module name="my-Javassist" options="" />
+      <module name="my-plugin-jar" options="-parameters" />
       <module name="my-security-parent" options="" />
       <module name="my-spring-admin-server" options="-parameters" />
       <module name="mypluginjar" options="-parameters" />
+      <module name="mysql-analyzer" options="-parameters" />
       <module name="mysqlanalyzer" options="-parameters" />
       <module name="parent" options="-parameters" />
       <module name="securityauth2" options="" />
@@ -140,6 +181,7 @@
       <module name="sofaboot" options="-parameters" />
       <module name="sofaboot-first" options="" />
       <module name="sofastack" options="-parameters" />
+      <module name="spring-boot-dubbo-hessian-file" options="-parameters" />
       <module name="spring-boot-dynamic-data-source" options="-parameters" />
       <module name="spring-security-auth2" options="-parameters" />
       <module name="springb-elasticsearch" options="-parameters" />
@@ -147,8 +189,10 @@
       <module name="springboot-dubbo-hessian-file" options="-parameters" />
       <module name="study-jvm" options="-parameters" />
       <module name="study-jvm-oom" options="-parameters" />
+      <module name="temp-test" options="-parameters" />
       <module name="test" options="-parameters" />
       <module name="test-jar" options="-parameters" />
+      <module name="tk-mybatis-Generator" options="-parameters" />
       <module name="tkmybatisGenerator" options="-parameters" />
     </option>
   </component>
