@@ -24,7 +24,7 @@ public class DingUtil {
     public static void main(String[] args) {
 
         try {
-            DingUtil.sendMsg(null,null,true);
+//            DingUtil.sendMsg(null,null,true);
             DingUtil.sendMsg(null,null,false);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
@@ -57,7 +57,7 @@ public class DingUtil {
 //            boolean isAtAll = true;
             //通知具体人的手机号码列表
             List<String> mobileList = Lists.newArrayList();
-            mobileList.add("177207198012");
+//            mobileList.add("17720719802");
             mobileList.add("13635288370");
             String userUrl = url;
             //钉钉机器人消息内容
