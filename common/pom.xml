@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>dubbo-common</module>
-        <module>temp-test</module>
+<!--        <module>temp-test</module>-->
     </modules>
 
 

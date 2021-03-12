@@ -22,16 +22,20 @@
         <option value="$PROJECT_DIR$/sofa-stack/sofa-biz-test/pom.xml" />
         <option value="$PROJECT_DIR$/sofa-stack/sofa-biz-test/my-sofa-plugin/hi-sofa-plugin/pom.xml" />
         <option value="$PROJECT_DIR$/../../study/spring-boot-dynamic-data-source-master/pom.xml" />
+        <option value="$PROJECT_DIR$/mybatis-plus/pom.xml" />
+        <option value="$PROJECT_DIR$/tk-mybatis-Generator/pom.xml" />
+        <option value="$PROJECT_DIR$/aop/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/demo-trancer/pom.xml" />
         <option value="$PROJECT_DIR$/safa/pom.xml" />
         <option value="$PROJECT_DIR$/springb-dynamic-load-jar/my-main-app/pom.xml" />
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8.0_201" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

@@ -22,39 +22,40 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>common</module>
-        <module>shiro-jwt</module>
-        <module>springb-elasticsearch</module>
-        <module>springb-dynamic-load-jar</module>
-        <module>sofa</module>
-        <module>dubbo-test</module>
-        <module>demo-trancer</module>
-        <module>tk-mybatis-Generator</module>
-        <module>g11n</module>
-        <module>mysql-analyzer</module>
-        <module>sofa-stack</module>
-        <module>aop</module>
-        <module>universal-capability-service</module>
-        <module>code-translate</module>
-        <module>securitty</module>
-        <module>my-security-parent</module>
-        <module>security-auth2</module>
-        <module>study-jvm</module>
-        <module>my-spring-admin-server</module>
-        <module>my-Javassist</module>
-        <module>springboot-dubbo-hessian-file</module>
-        <module>spring-security-auth2</module>
-        <module>java-shell</module>
-        <module>byte-code</module>
-        <module>hello-world</module>
-        <module>poi-tl</module>
-        <module>antdesignpro-demo</module>
-        <module>javasource-1.8</module>
-        <module>hbase</module>
-        <module>dbase</module>
-        <module>lucenne</module>
-        <module>DingDing</module>
+<!--        <module>common</module>-->
+<!--&lt;!&ndash;        <module>shiro-jwt</module>&ndash;&gt;-->
+<!--        <module>springb-elasticsearch</module>-->
+<!--        <module>springb-dynamic-load-jar</module>-->
+<!--        <module>sofa</module>-->
+<!--        <module>dubbo-test</module>-->
+<!--&lt;!&ndash;        <module>demo-trancer</module>&ndash;&gt;-->
+<!--&lt;!&ndash;        <module>tk-mybatis-Generator</module>&ndash;&gt;-->
+<!--        <module>g11n</module>-->
+<!--        <module>mysql-analyzer</module>-->
+<!--&lt;!&ndash;        <module>sofa-stack</module>&ndash;&gt;-->
+<!--        <module>aop</module>-->
+<!--&lt;!&ndash;        <module>universal-capability-service</module>&ndash;&gt;-->
+<!--        <module>code-translate</module>-->
+<!--&lt;!&ndash;        <module>securitty</module>&ndash;&gt;-->
+<!--        <module>my-security-parent</module>-->
+<!--        <module>security-auth2</module>-->
+<!--        <module>study-jvm</module>-->
+<!--        <module>my-spring-admin-server</module>-->
+<!--        <module>my-Javassist</module>-->
+<!--        <module>springboot-dubbo-hessian-file</module>-->
+<!--        <module>spring-security-auth2</module>-->
+<!--        <module>java-shell</module>-->
+<!--        <module>byte-code</module>-->
+<!--        <module>hello-world</module>-->
+<!--        <module>poi-tl</module>-->
+<!--&lt;!&ndash;        <module>antdesignpro-demo</module>&ndash;&gt;-->
+<!--        <module>javasource-1.8</module>-->
+<!--        <module>hbase</module>-->
+<!--        <module>dbase</module>-->
+<!--        <module>lucenne</module>-->
+<!--        <module>DingDing</module>-->
 
+        <module>AspectAop</module>
     </modules>
 
 

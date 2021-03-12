@@ -6,133 +6,160 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="facade (2) (com.linewell.license.platform.common.translate)" />
-        <module name="springb-esapi" />
-        <module name="my-oatuth2-parent" />
-        <module name="say-hi" />
+        <module name="facade" />
+        <module name="securitty-facade" />
+        <module name="tk-mybatis-Generator" />
+        <module name="AspectAop" />
         <module name="securitty-web" />
+        <module name="securitty-service" />
+        <module name="facade (1) (org.study.llf.sofa)" />
+        <module name="deploy" />
+        <module name="hello-plugin" />
+        <module name="mybatis-plus" />
+        <module name="customloader" />
+        <module name="demo-service-b" />
         <module name="springbelasticsearch" />
         <module name="securityauth2deploy" />
-        <module name="my-spring-admin-server" />
-        <module name="poi-tl" />
-        <module name="hbase" />
-        <module name="springboot-dubbo-hessian-file" />
-        <module name="my-plugin-jar" />
-        <module name="say-hello" />
-        <module name="auth-server" />
-        <module name="client002" />
-        <module name="client001" />
-        <module name="dubbo-test" />
-        <module name="oauth2-all-in-one" />
-        <module name="cglib" />
-        <module name="hello-world" />
-        <module name="temp-test" />
-        <module name="spring-boot-dubbo-hessian-file" />
-        <module name="customloader" />
+        <module name="instrumentation" />
         <module name="common-facade" />
-        <module name="tkmybatisGenerator" />
+        <module name="dubbotest" />
+        <module name="security-service" />
+        <module name="main" />
+        <module name="cglib" />
+        <module name="demo-service-c" />
+        <module name="provider" />
+        <module name="demo-service-a" />
+        <module name="hi-sofa-plugin" />
+        <module name="springboot-dubbo-hessian-file" />
+        <module name="dubbo-api" />
+        <module name="mysqlanalyzer" />
+        <module name="sofaboot-first" />
+        <module name="codetranslate" />
+        <module name="say-hi" />
         <module name="spring-boot-dynamic-data-source" />
         <module name="custom-loader" />
-        <module name="kaos" />
-        <module name="common-security-web" />
-        <module name="securityauth2facade" />
-        <module name="dubbocommon" />
-        <module name="jdbc-mysql" />
-        <module name="resource-config" />
-        <module name="security-service" />
-        <module name="study-jvm-oom" />
-        <module name="common-security-facade" />
-        <module name="order-web-controller" />
-        <module name="facade (1) (org.study.llf.sofa)" />
-        <module name="mypluginjar" />
-        <module name="shirojwt" />
-        <module name="dubbo-api" />
-        <module name="security-auth2-deploy" />
-        <module name="biz" />
-        <module name="deploy" />
-        <module name="security-config" />
-        <module name="springb-elasticsearch" />
-        <module name="java-shell" />
-        <module name="hi-sofa-plugin" />
-        <module name="user-facade" />
-        <module name="btrace" />
-        <module name="oauth2-authorization" />
-        <module name="hello-plugin" />
-        <module name="jvmclassloadtest" />
         <module name="demo-zipkin" />
-        <module name="service" />
-        <module name="security-facade" />
-        <module name="securitywebcontroller" />
-        <module name="asm" />
-        <module name="product-mgr" />
-        <module name="resource-exmple-01" />
-        <module name="web" />
-        <module name="lucenne" />
-        <module name="javasource-1.8" />
-        <module name="sofaboot-first" />
-        <module name="deploy (2) (com.linewell.license.platform.common.security)" />
-        <module name="facade" />
+        <module name="shirojwt" />
         <module name="test-jar" />
-        <module name="javassist" />
-        <module name="user-service" />
-        <module name="oauth2-resource" />
-        <module name="dubbo-common" />
-        <module name="security-web-controller" />
-        <module name="sb-security" />
-        <module name="jvm-classload-test" />
-        <module name="mysqlanalyzer" />
-        <module name="codetranslate" />
-        <module name="code-translate" />
-        <module name="instrumentation" />
-        <module name="common-security-service" />
-        <module name="myark-test" />
-        <module name="provider" />
-        <module name="i10n" />
-        <module name="my-Javassist" />
-        <module name="authorization-config" />
-        <module name="tk-mybatis-Generator" />
+        <module name="securitywebcontroller" />
+        <module name="first" />
+        <module name="tkmybatisGenerator" />
+        <module name="mypluginjar" />
         <module name="securityauth2service" />
         <module name="dynamic" />
-        <module name="user-web-controller" />
-        <module name="dubbotest" />
-        <module name="securitty-facade" />
-        <module name="sofaboot-health" />
-        <module name="securitty-service" />
-        <module name="main" />
-        <module name="demo-service-c" />
-        <module name="demo-service-b" />
-        <module name="demo-service-a" />
-        <module name="DingDing" />
-        <module name="security-auth2-facade" />
-        <module name="first" />
-        <module name="order-facade" />
-        <module name="mysql-analyzer" />
-        <module name="i18n" />
-        <module name="deploy (1) (org.study.llf)" />
-        <module name="order-service" />
-        <module name="shiro-jwt" />
-        <module name="test" />
-        <module name="security-auth2-service" />
+        <module name="springb-esapi" />
+        <module name="securityauth2facade" />
+        <module name="say-hello" />
+        <module name="security-facade" />
+        <module name="jvmclassloadtest" />
+        <module name="dubbocommon" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
+      <module name="antdesignpro-demo" target="1.5" />
       <module name="app-use-my-sofa-plugin" target="1.5" />
       <module name="appusemysofaplugin" target="1.5" />
+      <module name="asm" target="1.11" />
+      <module name="auth-server" target="1.5" />
+      <module name="authorization-config" target="1.5" />
+      <module name="biz" target="1.11" />
+      <module name="btrace" target="1.11" />
+      <module name="byte-code" target="1.11" />
+      <module name="client001" target="1.5" />
+      <module name="client002" target="1.5" />
+      <module name="code-translate" target="1.11" />
+      <module name="common" target="1.11" />
+      <module name="common-security" target="1.5" />
+      <module name="common-security-facade" target="1.5" />
+      <module name="common-security-service" target="1.5" />
+      <module name="common-security-web" target="1.5" />
+      <module name="config" target="1.5" />
+      <module name="dbase" target="1.11" />
+      <module name="demo-trancer" target="1.5" />
+      <module name="deploy (1) (org.study.llf)" target="1.5" />
+      <module name="deploy (2) (com.linewell.license.platform.common.security)" target="1.5" />
       <module name="deploy2" target="1.8" />
+      <module name="DingDing" target="1.11" />
+      <module name="dubbo-common" target="1.11" />
+      <module name="dubbo-test" target="1.11" />
       <module name="dubboconsumer" target="1.5" />
+      <module name="facade (2) (com.linewell.license.platform.common.translate)" target="1.5" />
       <module name="first" target="1.8" />
+      <module name="g11n" target="1.11" />
+      <module name="hbase" target="1.11" />
+      <module name="hello-world" target="1.11" />
       <module name="helloplugin" target="1.5" />
       <module name="hisofaplugin" target="1.5" />
+      <module name="i10n" target="1.11" />
+      <module name="i18n" target="1.11" />
+      <module name="java-shell" target="1.11" />
+      <module name="javasource-1.8" target="1.11" />
+      <module name="javassist" target="1.8" />
+      <module name="jdbc-mysql" target="1.11" />
+      <module name="jvm-classload-test" target="1.5" />
+      <module name="kaos" target="1.5" />
+      <module name="lucenne" target="1.11" />
+      <module name="my-Javassist" target="1.5" />
+      <module name="my-oatuth2-parent" target="1.5" />
+      <module name="my-plugin-jar" target="1.11" />
+      <module name="my-resource" target="1.5" />
+      <module name="my-security-parent" target="1.8" />
+      <module name="my-spring-admin-server" target="1.11" />
+      <module name="myark-test" target="1.5" />
       <module name="myjar" target="1.5" />
       <module name="mysofaplugin" target="1.5" />
+      <module name="mysql-analyzer" target="1.11" />
+      <module name="oauth2" target="1.5" />
+      <module name="oauth2-all-in-one" target="1.5" />
+      <module name="oauth2-authorization" target="1.5" />
+      <module name="oauth2-deploy" target="1.5" />
+      <module name="oauth2-resource" target="1.5" />
+      <module name="order-facade" target="1.5" />
+      <module name="order-mgr" target="1.5" />
+      <module name="order-service" target="1.5" />
+      <module name="order-web" target="1.5" />
+      <module name="order-web-controller" target="1.5" />
+      <module name="poi-tl" target="1.8" />
+      <module name="product-mgr" target="1.5" />
+      <module name="resource-config" target="8" />
+      <module name="resource-exmple-01" target="1.5" />
       <module name="sayhello" target="1.5" />
       <module name="sayhi" target="1.5" />
+      <module name="sb-security" target="1.5" />
+      <module name="security-auth2" target="1.8" />
+      <module name="security-auth2-deploy" target="1.8" />
+      <module name="security-auth2-facade" target="1.8" />
+      <module name="security-auth2-service" target="1.8" />
+      <module name="security-config" target="1.5" />
+      <module name="security-web-controller" target="1.8" />
+      <module name="service" target="1.5" />
+      <module name="shiro-jwt" target="1.11" />
+      <module name="simple" target="1.5" />
+      <module name="sofa" target="1.5" />
+      <module name="sofa-stack" target="1.5" />
       <module name="sofabiztest" target="1.5" />
       <module name="sofaboot" target="1.8" />
+      <module name="sofaboot-health" target="1.5" />
+      <module name="spring-boot-dubbo-hessian-file" target="1.11" />
+      <module name="spring-security-auth2" target="1.5" />
+      <module name="springb-dynamic-load-jar" target="1.11" />
+      <module name="springb-elasticsearch" target="1.11" />
+      <module name="study-jvm" target="1.11" />
+      <module name="study-jvm-oom" target="1.11" />
+      <module name="temp-test" target="1.11" />
+      <module name="test" target="1.11" />
+      <module name="translate-service" target="1.5" />
+      <module name="user-facade" target="1.5" />
+      <module name="user-mgr" target="1.5" />
+      <module name="user-service" target="1.5" />
+      <module name="user-web" target="1.5" />
+      <module name="user-web-controller" target="1.5" />
+      <module name="web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="AspectAop" options="" />
       <module name="DingDing" options="-parameters" />
       <module name="asm" options="-parameters" />
       <module name="auth-server" options="" />
@@ -171,6 +198,7 @@
       <module name="my-plugin-jar" options="-parameters" />
       <module name="my-security-parent" options="" />
       <module name="my-spring-admin-server" options="-parameters" />
+      <module name="mybatis-plus" options="" />
       <module name="mypluginjar" options="-parameters" />
       <module name="mysql-analyzer" options="-parameters" />
       <module name="mysqlanalyzer" options="-parameters" />
