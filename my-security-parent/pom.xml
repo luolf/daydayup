@@ -16,7 +16,7 @@
         <aspectjtools.version>1.8.13</aspectjtools.version>
         <alibaba.fastjson.version>1.2.59</alibaba.fastjson.version>
         <commons.lang3.version>3.4</commons.lang3.version>
-        <commons.io.version>2.5</commons.io.version>
+        <commons.io.version>2.7</commons.io.version>
         <curator_version>4.0.1</curator_version>
         <docker.registry.address>192.168.203.217:5000</docker.registry.address>
         <dubbo.version>2.7.1</dubbo.version>
