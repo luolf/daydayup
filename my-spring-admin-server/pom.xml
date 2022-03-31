@@ -12,7 +12,7 @@
     <groupId>org.study.llf</groupId>
     <artifactId>my-spring-admin-server</artifactId>
     <properties>
-        <spring.boot.version>2.1.1.RELEASE</spring.boot.version>
+        <spring.boot.version>2.5.12</spring.boot.version>
     </properties>
    <dependencies>
        <dependency>
