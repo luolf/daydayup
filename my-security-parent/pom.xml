@@ -14,7 +14,7 @@
 
         <apollo.version>1.4.0</apollo.version>
         <aspectjtools.version>1.8.13</aspectjtools.version>
-        <alibaba.fastjson.version>1.2.59</alibaba.fastjson.version>
+        <alibaba.fastjson.version>1.2.83</alibaba.fastjson.version>
         <commons.lang3.version>3.4</commons.lang3.version>
         <commons.io.version>2.5</commons.io.version>
         <curator_version>4.0.1</curator_version>
